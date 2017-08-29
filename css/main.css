@@ -1,198 +1,30 @@
 .bb-js
 {
     color: #444;
-    font-family: "proxima-nova","Helvetica Neue","Helvetica","sans-serif";
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAABESURBVDhP7cyhEQAwDMPAkO6/bLhLBXQJ7xU8s1xJRt19JhqRRaQRWUQakUWkEVlEGpFFpBFZRBqRRbQO7JT+wQMHqQtICe8f4Ub7/gAAAABJRU5ErkJggg==') /*../images/ps_neutral.png*/ repeat top left;
 }
 
-    .bb-js .navbar-inverse
-    {
-        background-color: #354250;
-        border-bottom: none;
-        margin-bottom: 0;
-        border-radius: 0;
-    }
-
-        .bb-js .navbar-inverse .navbar-brand
-        {
-            color: #fff;
-            font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-        }
-
-            .bb-js .navbar-inverse .navbar-brand:hover,
-            .bb-js .navbar-inverse .navbar-brand:focus
-            {
-                color: rgba(255, 255, 255,.75);
-                background-color: transparent;
-            }
-
-        .bb-js .navbar-inverse .navbar-text
-        {
-            color: #fff;
-        }
-
-        .bb-js .navbar-inverse .navbar-nav > li > a
-        {
-            color: #d5d5d5;
-        }
-
-            .bb-js .navbar-inverse .navbar-nav > li > a:hover,
-            .bb-js .navbar-inverse .navbar-nav > li > a:focus
-            {
-                color: #fff;
-                background-color: transparent;
-            }
-
-        .bb-js .navbar-inverse .navbar-nav > .active > a,
-        .bb-js .navbar-inverse .navbar-nav > .active > a:hover,
-        .bb-js .navbar-inverse .navbar-nav > .active > a:focus
-        {
-            color: #fff;
-            background-color: rgba(0,0,0,.5);
-        }
-
-        .bb-js .navbar-inverse .navbar-nav > .disabled > a,
-        .bb-js .navbar-inverse .navbar-nav > .disabled > a:hover,
-        .bb-js .navbar-inverse .navbar-nav > .disabled > a:focus
-        {
-            color: #fff;
-            background-color: transparent;
-        }
-
-        .bb-js .navbar-inverse .navbar-toggle
-        {
-            border-color: #dddddd;
-        }
-
-            .bb-js .navbar-inverse .navbar-toggle:hover,
-            .bb-js .navbar-inverse .navbar-toggle:focus
-            {
-                background-color: #dddddd;
-            }
-
-            .bb-js .navbar-inverse .navbar-toggle .icon-bar
-            {
-                background-color: #ccc;
-            }
-
-        .bb-js .navbar-inverse .navbar-collapse,
-        .bb-js .navbar-inverse .navbar-form
-        {
-            border-color: rgba(0,0,0,.5);
-        }
-
-        .bb-js .navbar-inverse .navbar-nav > .dropdown > a:hover .caret,
-        .bb-js .navbar-inverse .navbar-nav > .dropdown > a:focus .caret
-        {
-            border-top-color: #fff;
-            border-bottom-color: #fff;
-        }
-
-        .bb-js .navbar-inverse .navbar-nav > .open > a,
-        .bb-js .navbar-inverse .navbar-nav > .open > a:hover,
-        .bb-js .navbar-inverse .navbar-nav > .open > a:focus
-        {
-            background-color: rgba(0,0,0,.5);
-            color: #fff;
-        }
-
-            .bb-js .navbar-inverse .navbar-nav > .open > a .caret,
-            .bb-js .navbar-inverse .navbar-nav > .open > a:hover .caret,
-            .bb-js .navbar-inverse .navbar-nav > .open > a:focus .caret
-            {
-                border-top-color: #fff;
-                border-bottom-color: #fff;
-            }
-
-        .bb-js .navbar-inverse .navbar-nav > .dropdown > a .caret
-        {
-            border-top-color: #fff;
-            border-bottom-color: #fff;
-        }
-
-@media (max-width: 767)
+.btn.btn-xl
 {
-    .bb-js .navbar-inverse .navbar-nav .open .dropdown-menu > li > a
-    {
-        color: #fff;
-    }
-
-        .bb-js .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
-        .bb-js .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus
-        {
-            color: #fff;
-            background-color: transparent;
-        }
-
-    .bb-js .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
-    .bb-js .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
-    .bb-js .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus
-    {
-        color: #fff;
-        background-color: rgba(0,0,0,.5);
-    }
-
-    .bb-js .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
-    .bb-js .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-    .bb-js .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus
-    {
-        color: #ccc;
-        background-color: transparent;
-    }
+    font-size: 3rem;
 }
-
-.bb-js .navbar-inverse .navbar-link
-{
-    color: #fff;
-}
-
-    .bb-js .navbar-inverse .navbar-link:hover
-    {
-        color: #fff;
-    }
-
-
-.container
-{
-    max-width: 940px;
-}
-
-    .container h1,
-    .container h2,
-    .container h3,
-    .container h4,
-    .container h5,
-    .container h6
-    {
-        font-weight: 700;
-    }
-
 
 
 .bb-header
 {
-    background-color: #354250;
-    color: #fff;
-    margin-bottom: 2em;
 }
 
-    .bb-header.bb-header-fixed-navbar
-    {
-        padding-top: 50px;
-    }
 
     .bb-header h1
     {
-        color: #fff;
-        text-shadow: 2px 2px 2px #777;
-        font-family: Menlo,Monaco,Consolas,'Courier New',monospace;
+        color: #111;
     }
 
 .bb-docs-header
 {
     /*color: #fff;
     background-color: #343E60;*/
-    padding: 50px 0 75px;
+    background: #E9ECEF;
+    padding: 75px 0 75px;
 }
 
 .bb-masthead
@@ -219,7 +51,12 @@
         .bb-meta .bb-meta-list li
         {
             display: inline-block;
-            margin: 5px 2em;
+            margin: 0 2em 0 0;
+        }
+
+        .bb-meta .bb-meta-list li:last-child
+        {
+            margin-right: 0;
         }
 
     .bb-meta a
@@ -287,10 +124,7 @@
         margin-bottom: 1.35em;
     }
 
-    .bb-section pre.prettyprint
-    {
-        margin-bottom: 1.35em;
-    }
+
 
 .code-leader code
 {
@@ -358,52 +192,6 @@
         opacity: 1;
     }
 
-
-.alert--finch
-{
-    display: block;
-    font-weight: bold;
-    text-align: center;
-}
-
-.finch-promo
-{
-    display: block;
-    color: rgb(68, 68, 68);
-    text-decoration: none;
-    font-size: 21px;
-    font-weight: 300;
-    line-height: 1.4;
-    background: url('https://meetfinch.com/img/finch-icon.png') 5px 5px no-repeat;
-    min-height: 110px;
-    padding-top: 10px;
-    padding-left: 110px;
-    border-radius: 3px;
-    border: 1px solid #BBE4FF;
-    background-color: #f7f7f7;
-}
-
-    .finch-promo:hover
-    {
-        background-color: #f3f3f3;
-        color: rgb(68, 68, 68);
-        text-decoration: none;
-    }
-
-.promo-hl
-{
-    color: #337ab7;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2)
-{
-    .finch-promo
-    {
-        background-image: url('https://meetfinch.com/img/finch-icon@2x.png');
-        background-size: 96px;
-    }
-}
-
 .bb-light-blue
 {
     background-color: #54949B;
@@ -428,10 +216,7 @@
     margin-bottom: 25px;
 }
 
-    .docs-container .bb-subsection pre
-    {
-        margin-bottom: 2em;
-    }
+
 
     .docs-container .bb-subsection h4:not(.modal-title)
     {
@@ -665,40 +450,23 @@
     z-index: 2000;
 }
 
-.finch-promo {
-    display:block;
-    color:rgb(68, 68, 68);
-    text-decoration:none;
-    margin-top:2em;
-    font-size:21px;
-    font-weight:300;
-    line-height:1.4;
-    background:url('https://meetfinch.com/img/finch-icon.png') 5px 5px no-repeat;
-    min-height:110px;
-    padding-top:10px;
-    padding-left:110px;
-    border-radius:3px;
-    border:1px solid #BBE4FF;
-    background-color:#f7f7f7;
-}
-
-.finch-promo:hover {
-    background-color:#f3f3f3;
-    color:rgb(68, 68, 68);
-    text-decoration:none;
-}
-
-.promo-hl {
-    color: #337ab7;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2) {
-    .finch-promo {
-        background-image:url('https://meetfinch.com/img/finch-icon@2x.png');
-        background-size:96px;
-    }
-}
-
 .bb-light-blue {
     background-color:#54949B;
 }
+
+
+.highlight {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #f7f7f9;
+  }
+  .highlight pre {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    border: 0;
+  }
+  .highlight pre code {
+    font-size: inherit;
+  }
