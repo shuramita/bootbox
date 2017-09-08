@@ -1,11 +1,21 @@
+var shiftWindow = function () {
+    scrollBy(0, -85)
+};
 
 $(function () {
+    if (window.location.hash) {
+        shiftWindow();
+    }
+
     var doc = $('html, body');
+    var canPushState = false;
+    if (typeof history.pushState === "function") {
+        // Yup, have it
+        canPushState = true;
+    }
 
     try {
         window.prettyPrint && prettyPrint();
-
-        anchors.add('.bb-examples-list .bb-example');
 
         Example.init({
             "selector": ".bb-alert"
@@ -16,38 +26,24 @@ $(function () {
     }
 
     try {
-        $.scrollUp && $.scrollUp({
-            scrollName: 'scroll-up-btn',
-            animationSpeed: '600',
-            scrollText: '<i class="fa fa-4x fa-arrow-circle-up"></i>'
-        });
-    }
-    catch (ex) {
-        console.log(ex.message);
-    }
-
-    try {
         $(document)
-            .on('click', '.dropdown-menu li a[href^="#"]', function (e) {
+            .on('click', '.dropdown-menu a[href^="#"]', function (e) {
                 e.preventDefault();
 
                 var target = $(this).attr('href');
                 var offset = 75;
 
                 if (target && $(target).offset()) {
-                    offset = $(target).offset().top - 75;
+                    offset = $(target).offset().top - 85;
                 }
 
                 doc.animate({
                     scrollTop: offset
                 }, 'slow', function () {
-                    //window.location.hash = target;
+                    if (canPushState) {
+                        history.pushState(null, null, target);
+                    }
                 });
-            })
-            .off('click', 'a.back-to-top')
-            .on('click', 'a.back-to-top', function (e) {
-                e.preventDefault();
-                doc.animate({ scrollTop: 0 }, 'slow');
             });
     }
     catch (ex) {
@@ -56,6 +52,15 @@ $(function () {
 
 
     try {
+        var locales = Object.keys(bootbox.locales());
+        for(var i = 0; i < locales.length; i++){
+            var option = $('<option value=""></option>');
+            option.attr('value', locales[i]);
+            option.html(locales[i]);
+
+            $('#locales').append(option);
+        }
+
         $('.example-button').on('click', function (e) {
             e.preventDefault();
 
@@ -116,6 +121,14 @@ $(function () {
                         });
                         Example.show('Dismissable background alert shown');
                         break;
+                        
+                    case 'alert-locale':
+                        bootbox.alert({
+                            message: "This alert uses the Arabic locale!",
+                            locale: 'ar'
+                        });
+                        Example.show('Arabic locale alert shown');
+                        break;
 
 
                         /* Confirms */
@@ -162,11 +175,41 @@ $(function () {
                             }
                         });
                         break;
+                        
+                    case 'confirm-locale':
+                        var locale = $('#locales').val();
+                        bootbox.confirm({
+                            message: "This confirm uses the selected locale. Were the labels what you expected?",
+                            locale: locale,
+                            callback: function (result) {
+                                Example.show('This was logged in the callback: ' + result);
+                            }
+                        });
+                        break;
+
 
                         /* Prompts */
                     case 'prompt-default':
                         bootbox.prompt("This is the default prompt!", function (result) {
                             Example.show('This was logged in the callback: ' + result);
+                        });
+                        break;
+                        
+                    case 'prompt-custom-locale':
+                        var locale = {
+                            OK: 'I Suppose',
+                            CONFIRM: 'Go Ahead',
+                            CANCEL: 'Maybe Not'
+                        };
+
+                        bootbox.addLocale('custom', locale);
+
+                        bootbox.prompt({ 
+                            title: "This is a prompt with a custom locale! What do you think?", 
+                            locale: 'custom',
+                            callback: function (result) {
+                                Example.show('This was logged in the callback: ' + result);
+                            }
                         });
                         break;
 
@@ -193,6 +236,31 @@ $(function () {
                             }
                         });
                         break;
+                        
+                        case 'prompt-radio':
+                            bootbox.prompt({
+                                title: "This is a prompt with a set of radio inputs!",
+                                message: '<p>Please select an option below:</p>',
+                                inputType: 'radio',
+                                inputOptions: [
+                                    {
+                                        text: 'Choice One',
+                                        value: '1',
+                                    },
+                                    {
+                                        text: 'Choice Two',
+                                        value: '2',
+                                    },
+                                    {
+                                        text: 'Choice Three',
+                                        value: '3',
+                                    }
+                                ],
+                                callback: function (result) {
+                                    Example.show('This was logged in the callback: ' + result);
+                                }
+                            });
+                            break;
 
                     case 'prompt-date':
                         bootbox.prompt({
@@ -281,6 +349,20 @@ $(function () {
                             }
                         });
                         break;
+                        
+                    case 'prompt-range':
+                        bootbox.prompt({
+                            title: "This is a prompt with a range input!",
+                            inputType: 'range',
+                            min: 0,
+                            max: 100,
+                            step: 5,
+                            value: 35,
+                            callback: function (result) {
+                                Example.show('This was logged in the callback: ' + result);
+                            }
+                        });
+                        break;
 
 
                         /* Custom dialogs */
@@ -288,7 +370,7 @@ $(function () {
                     case 'custom-dialog-as-overlay':
                         var timeout = 3000; // 3 seconds
                         var dialog = bootbox.dialog({
-                            message: '<p class="text-center">Please wait while we do something...</p>',
+                            message: '<p class="text-center mb-0">Please wait while we do something...</p>',
                             closeButton: false
                         });
 
@@ -301,12 +383,12 @@ $(function () {
                     case 'custom-dialog-init':
                         var dialog = bootbox.dialog({
                             title: 'A custom dialog with init',
-                            message: '<p><i class="fa fa-spin fa-spinner"></i> Loading...</p>'
+                            message: '<p class="mb-0"><i class="fa fa-spin fa-spinner"></i> Loading...</p>'
                         });
 
                         dialog.init(function () {
                             setTimeout(function () {
-                                dialog.find('.bootbox-body').html('I was loaded after the dialog was shown!');
+                                dialog.find('.bootbox-body').html('<p class="mb-0">I was loaded after the dialog was shown!</p>');
                             }, 3000);
                         });
 

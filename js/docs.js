@@ -1,47 +1,43 @@
+var shiftWindow = function () {
+    scrollBy(0, -85)
+};
+
 $(function () {
+    if (window.location.hash) {
+        shiftWindow();
+    }
+
     var doc = $('html, body');
+    var canPushState = false;
+    if (typeof history.pushState === "function") {
+        // Yup, have it
+        canPushState = true;
+    }
 
     try {
         window.prettyPrint && prettyPrint();
-
-        anchors.add('.bb-section h2, .bb-subsection h3, .bb-subsection h4');
-    }
-    catch (ex) {
-        console.log(ex.message);
-    }
-
-    try {
-        $.scrollUp && $.scrollUp({
-            scrollName: 'scroll-up-btn',
-            animationSpeed: '600',
-            scrollText: '<i class="fa fa-4x fa-arrow-circle-up"></i>'
-        });
     }
     catch (ex) {
         console.log(ex.message);
     }
 
     $(document)
-        .on('click', '.dropdown-menu li a[href^="#"]', function (e) {
+        .on('click', '.dropdown-menu a[href^="#"]', function (e) {
             e.preventDefault();
 
             var target = $(this).attr('href');
             var offset = 75;
 
             if (target && $(target).offset()) {
-                offset = $(target).offset().top - 75;
+                offset = $(target).offset().top - 85;
             }
 
             doc.animate({
                 scrollTop: offset
             }, 'slow', function () {
-                //window.location.hash = target;
+                if (canPushState) {
+                    history.pushState(null, null, target);
+                }
             });
-        })
-        .off('click', 'a.back-to-top')
-        .on('click', 'a.back-to-top', function (e) {
-            e.preventDefault();
-
-            doc.animate({ scrollTop: 0 }, 'slow');
         });
 });

@@ -3,6 +3,11 @@
     color: #444;
 }
 
+.bb-js .nav-link.nav-link-split
+{
+    padding-right: 0;
+}
+
 .btn.btn-xl
 {
     font-size: 3rem;
@@ -89,23 +94,13 @@
 .docs-container h2,
 .docs-container h3,
 .docs-container h4:not(.modal-title),
-.docs-container h5,
+.docs-container h5:not(.modal-title),
 .docs-container h6
 {
     color: #232830;
     font-weight: 700;
 }
 
-.docs-container
-{
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 40px 0;
-    -moz-transition: -webkit-transform 200ms ease-in-out 0s, -moz-transform 200ms ease-in-out 0s, -o-transform 200ms ease-in-out 0s, transform 200ms ease-in-out 0s;
-    -o-transition: -webkit-transform 200ms ease-in-out 0s, -moz-transform 200ms ease-in-out 0s, -o-transform 200ms ease-in-out 0s, transform 200ms ease-in-out 0s;
-    -webkit-transition: -webkit-transform 200ms ease-in-out 0s, -moz-transform 200ms ease-in-out 0s, -o-transform 200ms ease-in-out 0s, transform 200ms ease-in-out 0s;
-    transition: -webkit-transform 200ms ease-in-out 0s, -moz-transform 200ms ease-in-out 0s, -o-transform 200ms ease-in-out 0s, transform 200ms ease-in-out 0s;
-}
 
     .docs-container .intro h3
     {
@@ -131,11 +126,9 @@
     font-size: 2em;
 }
 
-#gist6327194,
-#gist6339916
+.bb-ex
 {
-    height: 300px;
-    overflow: auto;
+    width: 8rem;
 }
 
 #gist6339780
@@ -150,9 +143,40 @@
     font-size: 1.2em;
 }
 
-.bb-code-string
+.bb-code.bb-code-sm
+{
+    font-size: 1em;
+}
+
+.bb-code.bb-code-lg
+{
+    font-size: 1.4em;
+}
+
+.bb-code.bb-code-block
+{
+    display: block;
+}
+
+.bb-code .bb-code-string
 {
     color: #3276b1;
+}
+
+.bb-code .bb-code-parameter
+{
+    color: #555;
+}
+
+.bb-code .bb-code-comment
+{
+    color: #10AF36 !important;
+}
+
+.bb-code .bb-code-line
+{
+    display: block;
+    margin-left: 3rem;
 }
 
 .bb-code .bb-code-outline
@@ -165,7 +189,7 @@
 {
     margin-top: 3em;
     padding: 3em 0;
-    background: #141414;
+    background: #343A40;
     color: rgba(255, 255, 255, .5);
 }
 
@@ -256,6 +280,7 @@
 
 .docs-container .bb-function
 {
+    margin-bottom: 2rem;
 }
 
     .docs-container .bb-function h3
@@ -267,7 +292,7 @@
 .bb-locales-list
 {
     list-style: none;
-    margin: 0;
+    margin: 0 0 2rem;
     padding: 0;
 }
 
@@ -299,6 +324,7 @@
     {
         margin-bottom: 1.5em;
     }
+
 
 .bb-examples-list
 {
@@ -455,18 +481,3 @@
 }
 
 
-.highlight {
-    padding: 1rem;
-    margin: 1rem 0;
-    background-color: #f7f7f9;
-  }
-  .highlight pre {
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    background-color: transparent;
-    border: 0;
-  }
-  .highlight pre code {
-    font-size: inherit;
-  }
