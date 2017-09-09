@@ -18,7 +18,7 @@
 
 <body class="bb-js">
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
-        <a class="navbar-brand" href="./index.html">bootbox<span class="text-danger">.js</span> &mdash; alert, confirm and flexible dialogs for the Bootstrap framework</a>
+        <a class="navbar-brand" href="./">bootbox<span class="text-danger">.js</span> &mdash; alert, confirm and flexible dialogs for the Bootstrap framework</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -85,7 +85,8 @@
         <div id="content" class="jumbotron jumbotron-fluid" tabindex="-1">
             <div class="container">
                 <div class="bb-masthead">
-                    <h1>Bootbox<span class="text-danger">.js</span>
+                    <h1>
+                        Bootbox<span class="text-danger">.js</span>
                     </h1>
                     <p class="lead">
                         Bootstrap modals made easy.
@@ -185,19 +186,19 @@
             </p>
             <div class="row">
                 <div class="col-4">
-                    <p><a href="./documentation.html#bb-alert-dialog" class="bb-ex bb-alert-ex btn btn-dark">alert</a></p>
+                    <p><button type="button" class="bb-ex bb-alert-ex btn btn-dark">alert</button></p>
                     <p>
                         <code class="bb-code">bootbox.alert(<i class="bb-code-parameter">message</i>, <i class="bb-code-parameter">callback</i>);</code>
                     </p>
                 </div>
                 <div class="col-4">
-                    <p><a href="./documentation.html#bb-confirm-dialog" class="bb-ex bb-alert-ex btn btn-dark">confirm</a></p>
+                    <p><button type="button" class="bb-ex bb-confirm-ex btn btn-dark">confirm</button></p>
                     <p>
                         <code class="bb-code">bootbox.confirm(<i class="bb-code-parameter">message</i>, <i class="bb-code-parameter">callback</i>)</code>
                     </p>
                 </div>
                 <div class="col-4">
-                    <p><a href="./documentation.html#bb-prompt-dialog" class="bb-ex bb-alert-ex btn btn-dark">prompt</a></p>
+                    <p><button type="button" class="bb-ex bb-prompt-ex btn btn-dark">prompt</button></p>
                     <p>
                         <code class="bb-code">bootbox.prompt(<i class="bb-code-parameter">message</i>, <i class="bb-code-parameter">callback</i>)</code>
                     </p>
@@ -288,6 +289,33 @@
 
             $('.bb-hello-world').on('click', function (e) {
                 bootbox.alert("Hello world!");
+            });
+
+            $('.bb-alert-ex').on('click', function (e) {
+                bootbox.alert("So long, and thanks for all the fish!");
+            });
+
+            $('.bb-confirm-ex').on('click', function (e) {
+                bootbox.confirm({ 
+                    message: "Did you bring your towel?", 
+                    buttons: {
+                        cancel: {
+                            label: 'No'
+                        },
+                        confirm : {
+                            label: 'Yes'
+                        }
+                    },
+                    callback: function(result){ }
+                });
+            });
+
+            $('.bb-prompt-ex').on('click', function (e) {
+                bootbox.prompt({ 
+                    title: "What is <i>the</i> answer?", 
+                    value: 42, 
+                    callback: function(result){ }
+                });
             });
         });
     </script>
