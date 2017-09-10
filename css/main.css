@@ -14,11 +14,6 @@
 }
 
 
-.bb-workmark
-{
-}
-
-
 .bb-header
 {
 }
@@ -106,6 +101,13 @@
 {
     margin: 2em 0;
 }
+
+    .bb-section .page-header
+    {
+        border-bottom: solid 1px rgba(0,0,0,0.125);
+        padding-bottom: 0.35rem;
+        margin-bottom: 1rem;
+    }
 
     .bb-section p
     {
