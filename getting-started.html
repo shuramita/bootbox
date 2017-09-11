@@ -72,7 +72,7 @@
                 </li>
             </ul>
             <div class="form-inline">
-                <a class="btn btn-danger my-2 my-sm-0" href="#">
+                <a class="btn btn-danger my-2 my-sm-0" href="#" id="download-bootbox">
                     <i class="fa fa-download"></i>
                     Download
                 </a>
@@ -300,9 +300,15 @@
             try {
                 window.prettyPrint && prettyPrint();
 
-                $('a.back-to-top').on('click', function (e) {
+                $('#download-bootbox').on('click', function(e){
                     e.preventDefault();
-                    $('html, body').animate({ scrollTop: 0 }, 'slow');
+
+                    bootbox.alert({
+                        title: 'Bootbox.js',
+                        message: '<h3><i class="fa fa-smile-o"></i> Hey there!</h3> <p>Thank you for your interest. Unfortunately, Bootbox 5 is not ready for distribution yet. ' 
+                            + 'If you want to start testing it, grab <a href="https://github.com/tiesont/bootbox">the source code</a> and ' 
+                            + 'report any issues you find.</p>'
+                    });
                 });
             }
             catch (ex) {
