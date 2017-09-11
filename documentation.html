@@ -397,7 +397,7 @@
                     Prompt dialogs are (by default) single-line text inputs. You can modify the type of prompt Bootbox generates using the 
                     prompt-only options below.
                 </p>
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped table-responsive">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -562,78 +562,77 @@
                 Bootbox dialogs can be configured using the options below.
             </p>
             <div class="bb-section">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
-                        <colgroup>
-                            <col class="col-name" />
-                            <col class="col-type" />
-                            <col class="col-description" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr id="bb-option-message">
-                                <td>
-                                    <p>message</p>
-                                </td>
-                                <td>String | Element</td>
-                                <td>
-                                    <p>
-                                        Text (or markup) displayed in the dialog.
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-danger">
-                                            Required for alert, confirm, and custom dialogs
-                                        </span>
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr id="bb-option-title">
-                                <td>title</td>
-                                <td>String | Element</td>
-                                <td>
-                                    <p>
-                                        Adds a header to the dialog and places this text (or markup) in an <code>&lt;h5&gt;</code> element.
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-danger">
-                                            Required for prompts
-                                        </span>
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr id="bb-option-callback">
-                                <td>
-                                    <p>callback</p>
-                                </td>
-                                <td>Function</td>
-                                <td>
-                                    <p>
-                                        <span class="badge badge-danger">
-                                            Required for confirm and prompt
-                                        </span>
-                                    </p>
-                                    <p>
-                                        An alert callback should not supply an argument; it will be ignored if it does:
-                                    </p>
-                                    <pre class="prettyprint linenums"><code>bootbox.alert({ message: "I'm an alert!", callback: function() {} })</code></pre>
-                                    <p>
-                                        Confirm and prompt callbacks <b>must</b> supply an argument for the result; for confirm, it will be
-                                        a <code>true</code> or <code>false</code> value, while the prompt result will hold the value(s)
-                                        entered by the user:
-                                    </p>
-                                    <pre class="prettyprint linenums"><code>bootbox.confirm("Are you sure?", function(result) {
+                <table class="table table-bordered table-striped table-responsive">
+                    <colgroup>
+                        <col class="col-name" />
+                        <col class="col-type" />
+                        <col class="col-description" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="bb-option-message">
+                            <td>
+                                <p>message</p>
+                            </td>
+                            <td>String | Element</td>
+                            <td>
+                                <p>
+                                    Text (or markup) displayed in the dialog.
+                                </p>
+                                <p>
+                                    <span class="badge badge-danger">
+                                        Required for alert, confirm, and custom dialogs
+                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr id="bb-option-title">
+                            <td>title</td>
+                            <td>String | Element</td>
+                            <td>
+                                <p>
+                                    Adds a header to the dialog and places this text (or markup) in an <code>&lt;h5&gt;</code> element.
+                                </p>
+                                <p>
+                                    <span class="badge badge-danger">
+                                        Required for prompts
+                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr id="bb-option-callback">
+                            <td>
+                                <p>callback</p>
+                            </td>
+                            <td>Function</td>
+                            <td>
+                                <p>
+                                    <span class="badge badge-danger">
+                                        Required for confirm and prompt
+                                    </span>
+                                </p>
+                                <p>
+                                    An alert callback should not supply an argument; it will be ignored if it does:
+                                </p>
+                                <pre class="prettyprint linenums"><code>bootbox.alert({ message: "I'm an alert!", callback: function() {} })</code></pre>
+                                <p>
+                                    Confirm and prompt callbacks <b>must</b> supply an argument for the result; for confirm, it will be
+                                    a <code>true</code> or <code>false</code> value, while the prompt result will hold the value(s)
+                                    entered by the user:
+                                </p>
+                                <pre class="prettyprint linenums"><code>bootbox.confirm("Are you sure?", function(result) {
     // result will be true or false
 }); </code></pre>
-                                    <p>
-                                        or
-                                    </p>
-                                    <pre class="prettyprint linenums"><code>bootbox.prompt("What is your name?", function(result) {
+                                <p>
+                                    or
+                                </p>
+                                <pre class="prettyprint linenums"><code>bootbox.prompt("What is your name?", function(result) {
     if (result === null) {
         // Prompt dismissed
     } else {
@@ -780,35 +779,35 @@
     callback: function() { }
 }</code></pre>
 
-                                    <h6>Options:</h6>
-                                    <table class="table">
-                                        <colgroup>
-                                            <col style="width: 75px;" />
-                                            <col />
-                                        </colgroup>
-                                        <tr>
-                                            <td>alert</td>
-                                            <td>
-                                                <code>ok</code>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>confirm</td>
-                                            <td>
-                                                <code>cancel, confirm</code>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>prompt</td>
-                                            <td>
-                                                <code>cancel, confirm</code>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <p>
-                                        Each of the available button options can be overridden to use custom content (text or HTML) and CSS styles. For example:
-                                    </p>
-                                    <pre class="prettyprint linenums"><code>bootbox.confirm({
+                                <h6>Options:</h6>
+                                <table class="table table-responsive">
+                                    <colgroup>
+                                        <col style="width: 75px;" />
+                                        <col />
+                                    </colgroup>
+                                    <tr>
+                                        <td>alert</td>
+                                        <td>
+                                            <code>ok</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>confirm</td>
+                                        <td>
+                                            <code>cancel, confirm</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>prompt</td>
+                                        <td>
+                                            <code>cancel, confirm</code>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    Each of the available button options can be overridden to use custom content (text or HTML) and CSS styles. For example:
+                                </p>
+                                <pre class="prettyprint linenums"><code>bootbox.confirm({
     message: "This is a confirm with custom button text and color! Do you like it?",
     buttons: {
         confirm: {
@@ -824,34 +823,33 @@
         // ...
     }
 });</code></pre>
-                                    <p>
-                                        You <b>cannot</b> override the callbacks for the alert, confirm, and prompt dialog's buttons.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>locale</td>
-                                <td>string</td>
-                                <td>
-                                    <p>
-                                        Sets the locale to use <em>per dialog</em> &mdash; this option does not override the global locale. 
-                                        Other dialogs will still use the default locale.
-                                    </p>
-                                    <p>
-                                        The locale settings are used to translate the three standard button labels: OK, CONFIRM, CANCEL
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                                <p>
+                                    You <b>cannot</b> override the callbacks for the alert, confirm, and prompt dialog's buttons.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>locale</td>
+                            <td>string</td>
+                            <td>
+                                <p>
+                                    Sets the locale to use <em>per dialog</em> &mdash; this option does not override the global locale. 
+                                    Other dialogs will still use the default locale.
+                                </p>
+                                <p>
+                                    The locale settings are used to translate the three standard button labels: OK, CONFIRM, CANCEL
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
         <section id="bb-available-locales" class="bb-section">
             <h2 class="page-header">Available Locales</h2>
             <p id="available-locales">The following locales are available:</p>
-            <table class="table table-condensed table-striped table-bordered">
+            <table class="table table-sm table-striped table-bordered table-responsive">
                 <tr>
                     <th style="width: 4rem;">Key</th>
                     <th>Name</th>
