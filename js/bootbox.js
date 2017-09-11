@@ -331,8 +331,8 @@
 
     dialog.one("hidden.bs.modal", function (e) {
       // ensure we don't accidentally intercept hidden events triggered
-      // by children of the current dialog. We shouldn't anymore now BS
-      // namespaces its events; but still worth doing
+      // by children of the current dialog. We shouldn't need to handle this anymore, 
+      // now that Bootstrap namespaces its events, but still worth doing.
       if (e.target === this) {
         dialog.remove();
       }

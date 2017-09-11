@@ -18,7 +18,6 @@
 {
 }
 
-
     .bb-header h1
     {
         color: #111;
@@ -39,6 +38,9 @@
     .bb-masthead h1
     {
         font-size: 5em;
+        font-weight: 700;
+        text-shadow: 2px 2px 2px #777;
+        font-family: Menlo,Monaco,Consolas,'Courier New',monospace;
     }
 
 .bb-meta

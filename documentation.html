@@ -114,7 +114,7 @@
     <div class="container docs-container">
         <div class="bs-callout bs-callout-danger">
             <h4>
-                Please note:
+                IMPORTANT:
             </h4>
             <p>
                 There are some caveats to using Bootbox dialogs in place of native dialogs. Please see the <a href="#bb-notes">Known Limitations</a> section to learn more.
@@ -174,13 +174,13 @@
             <div id="bb-alert-advanced-usage" class="bb-subsection">
                 <h3 class="bb-subsection-header">Advanced Usage</h3>
                 <p>
-                    <b>All</b> Bootstrap modals, unlike native alerts, confirms, or prompts, generate <b>non-blocking</b> events.
-                    Because of this limitation, code that should not be evaluated until your user has dismissed your alert should be
-                    placed (or called) within a callback function:
+                    If you have code that should not be evaluated until your user has dismissed your alert 
+                    (see <a href="bb-note-nonblocking">Bootbox Limitations</a> below), call it within the callback function:
                 </p>
                 <pre class="prettyprint linenums"><code>bootbox.alert("Your message here&hellip;", function(){ /* your callback code */ })</code></pre>
                 <p>
-                    Alerts can be customized, using the <a href="#bb-options">options described below</a>.
+                    Alerts can be customized, using the <a href="#bb-options">options described below</a>. Here's an example 
+                    of a small alert, using <code>size</code>:
                 </p>
                 <div class="bb-example bb-example-modal">
                     <pre class="prettyprint linenums"><code>bootbox.alert({
@@ -207,6 +207,9 @@
                         </div>
                     </figure>
                 </div>
+                <p>
+                    <b>Requires Bootstrap 3.1.0 or newer</b>.
+                </p>
             </div>
         </section>
 
@@ -260,7 +263,8 @@
             <div class="bb-subsection">
                 <h3 class="bb-subsection-header">Advanced Usage</h3>
                 <p>
-                    Confirm dialogs can be customized, using the <a href="#bb-options">options described below</a>.
+                    Confirm dialogs can be customized, using the <a href="#bb-options">options described below</a>. Here's an example 
+                    of a small confirm, using <code>size</code>:
                 </p>
                 <div class="bb-example bb-example-modal">
                     <pre class="prettyprint linenums"><code>bootbox.confirm({ 
@@ -284,6 +288,9 @@
                         </div>
                     </figure>
                 </div>
+                <p>
+                    <b>Requires Bootstrap 3.1.0 or newer</b>.
+                </p>
             </div>
         </section>
 
@@ -343,7 +350,8 @@
             <div class="bb-subsection">
                 <h3 class="bb-subsection-header">Advanced Usage</h3>
                 <p>
-                    Prompt dialogs can also be customized, using the <a href="#bb-options">options described below</a>.
+                    Prompt dialogs can also be customized, using the <a href="#bb-options">options described below</a>. Here's an example 
+                    of a small prompt, using <code>size</code>:
                 </p>
                 <div class="bb-example bb-example-modal">
                     <pre class="prettyprint linenums"><code>bootbox.prompt({ 
@@ -374,6 +382,9 @@
                         </div>
                     </figure>
                 </div>
+                <p>
+                    <b>Requires Bootstrap 3.1.0 or newer</b>.
+                </p>
                 <div class="bs-callout bs-callout-info">
                     <h4>Please note:</h4>
                     <p>
@@ -417,6 +428,11 @@
                                     <code>text</code> (default), <code>textarea</code>, <code>email</code>, <code>select</code>, <code>checkbox</code>, 
                                     <code>radio</code>, <code>date</code>, <code>time</code>, <code>number</code>, <code>range</code>, 
                                     and <code>password</code>.
+                                </p>
+                                <p>
+                                    <code>email</code>, <code>date</code>, <code>time</code>, <code>number</code>, and <code>range</code> all 
+                                    require browser support to function properly. You may want to consult <a href="http://caniuse.com">caniuse.com</a> 
+                                    to determine if your target browsers support the input types you are intending to use.
                                 </p>
                             </td>
                         </tr>
@@ -1043,28 +1059,39 @@ dialog.init(function(){
         <section id="bb-notes" class="bb-section">
             <h2 class="page-header">Known Limitations</h2>
             <p>
-                Using Bootbox does have some caveats, as noted below.
+                Using Bootbox has some caveats, as noted below.
             </p>
             <dl class="bb-notes-list">
-                <dt class="text-danger">
+                <dt class="text-danger" id="bb-note-nonblocking">
                     Dialog code does not block code execution
                 </dt>
                 <dd>
                     <p>
-                        <b>All</b> Bootstrap modals, unlike native alerts, confirms, or prompts, generate <b>non-blocking</b> events.
-                        Because of this limitation, code that should not be evaluated until a user has dismissed your dialog should be
-                        placed (or called) within the callback function of the dialog.
+                        <b>All</b> Bootstrap modals (and therefore Bootbox modals), unlike native alerts, confirms, or prompts, are 
+                        <a href="https://getbootstrap.com/docs/4.0/components/modal/#methods">asynchronous</a>; meaning, the events 
+                        which Bootstrap generates are <b>non-blocking</b> events. Because of this limitation, code that should not 
+                        be evaluated until a user has dismissed your dialog must be called within the callback function of the dialog.
                     </p>
                 </dd>
-                <dt class="text-danger">
+                <dt class="text-danger" id="bb-note-multiplemodals">
                     Multiple open modals are not supported
                 </dt>
                 <dd>
                     <p>
-                        This is a limitation of the Bootstrap modal plugin, as noted
-                        in the <a href="http://getbootstrap.com/javascript/#callout-stacked-modals">official Bootstrap documentation</a>. While
+                        This is a limitation of the Bootstrap modal plugin, as noted in the 
+                        <a href="https://getbootstrap.com/docs/4.0/components/modal/#how-it-works">official Bootstrap documentation</a>. While
                         it <em>is</em> functionally possible to trigger multiple modals, custom CSS and/or JavaScript code is required for each
                         layer of modal to display properly.
+                    </p>
+                </dd>
+                <dt class="text-danger" id="bb-note-novalidation">
+                    Bootbox prompts do not validate return values
+                </dt>
+                <dd>
+                    <p>
+                        The <code>bootbox.prompt</code> function does not (currently) enforce any validation of user input for any of the 
+                        available input types, including pattern-matching. You will need to handle validation within the callback function; 
+                        return <code>false</code> to keep the modal open if your validation fails.
                     </p>
                 </dd>
             </dl>
