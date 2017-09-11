@@ -37,10 +37,16 @@
 
     .bb-masthead h1
     {
-        font-size: 5em;
         font-weight: 700;
         text-shadow: 2px 2px 2px #777;
         font-family: Menlo,Monaco,Consolas,'Courier New',monospace;
+    }
+
+    @media (min-width: 768px) {
+        .bb-masthead h1
+        {
+            font-size: 5em;
+        }     
     }
 
 .bb-meta
@@ -117,11 +123,12 @@
     }
 
 
-
-.code-leader code
-{
-    font-size: 2em;
-}
+    @media (min-width: 768px) {
+        .code-leader code
+        {
+            font-size: 2em;
+        }
+    }
 
 .bb-ex
 {
@@ -337,42 +344,6 @@
         border-bottom: dotted 1px #d5d5d5;
     }
 
-.console
-{
-    border: dotted 1px #d5d5d5;
-    height: 600px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-    .console > div
-    {
-        padding: 8px;
-        border-bottom: dotted 1px #d5d5d5;
-    }
-
-        .console > div .count
-        {
-            font-weight: 600;
-            padding: 0 3px;
-        }
-
-.bb-examples-console-sidebar
-{
-}
-
-    .bb-examples-console-sidebar.affix
-    {
-        top: 200px;
-        width: 278px;
-    }
-
-
-.modal.bb-alternate-modal .modal-content
-{
-    background: #555;
-    color: #fff;
-}
 
 
 .docs-container .bs-callout
