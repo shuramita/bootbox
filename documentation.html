@@ -81,7 +81,7 @@
         <div id="content" class="jumbotron jumbotron-fluid" tabindex="-1">
             <div class="container">
                 <div class="bb-masthead">
-                    <h2 class="display-4">Documentation</h2>
+                    <h2 class="marque">Documentation</h2>
                     <p class="lead">
                         Currently viewing documentation for version 5.x.
                     </p>
@@ -90,7 +90,7 @@
                         <ul class="bb-meta-list float-md-right">
                             <li class="ml-auto"><span>Version 5.0.0-beta</span></li>
                             <li>
-                                <a href="https://github.com/makeusabrew/bootbox">
+                                <a href="https://github.com/tiesont/bootbox">
                                     <i class="fa fa-github"></i>
                                     Github
                                 </a>
@@ -503,6 +503,40 @@
                                 </p>
                             </td>
                         </tr>
+                        <tr>
+                            <td>pattern</td>
+                            <td>
+                                <p>
+                                    Set the <code>pattern</code> option to require the input value to follow a specific format. If <code>pattern</code> 
+                                    is set, the prompt will not close if the input value fails pattern validation.
+                                </p>
+                                <p>
+                                    Can be added for any input type, but generally only used for <code>text</code> inputs, normally as a fallback 
+                                    for <code>email</code>, <code>time</code>, <code>date</code>, and <code>number</code> inputs where native browser 
+                                    support for those types is lacking.
+                                </p>
+                                <p>
+                                    Default: <code>null</code>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>required</td>
+                            <td>
+                                <p>
+                                    Set the <code>required</code> option to <code>true</code> to require an input value. When <code>true</code>, the prompt 
+                                    will not close if the input value is <code>null</code>, an empty string, or fails the input type's built-in 
+                                    validation constraints. 
+                                </p>
+                                <p>
+                                    Valid for <code>text</code>, <code>textarea</code>, <code>email</code>, <code>password</code>, <code>select</code>, 
+                                    <code>time</code>, <code>date</code>, <code>number</code>, and <code>range</code> types.
+                                </p>
+                                <p>
+                                    Default: <code>null</code>
+                                </p>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 <p>
@@ -549,6 +583,71 @@
 
             <div class="bb-subsection">
                 <h3 class="bb-subsection-header">Advanced Usage</h3>
+                <p>
+                    As noted above, the only required option for a custom dialog is <code>message</code>. Custom dialogs also do not utilize a 
+                    global callback; each button you add should have it's own callback function. Here's an example with many of the options utilized:
+                </p>
+                <div class="bb-example bb-example-modal-advanced">
+                    <pre class="prettyprint linenums"><code>bootbox.dialog({ 
+    title: 'Custom Dialog Example',
+    message: '&lt;p&gt;This dialog demonstrates many of the options available when using the Bootbox library&lt;/p&gt;',
+    size: 'large',
+    onEscape: true,
+    backdrop: true,
+    buttons: {
+        fee: {
+            label: 'Fee',
+            className: 'btn-primary',
+            callback: function(){
+                
+            }
+        },
+        fi: {
+            label: 'Fi',
+            className: 'btn-info',
+            callback: function(){
+                
+            }
+        },
+        fo: {
+            label: 'Fo',
+            className: 'btn-success',
+            callback: function(){
+                
+            }
+        },
+        fum: {
+            label: 'Fum',
+            className: 'btn-danger',
+            callback: function(){
+                
+            }
+        }
+    }
+})</code></pre>
+                    <figure>
+                        <figcaption>Example <b>bb.9</b></figcaption>
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Custom Dialog Example</h5>
+                                    <button type="button" class="bootbox-close-button close" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="bootbox-body">
+                                        <p>This dialog demonstrates many of the options available when using the Bootbox library</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Fee</button>
+                                    <button type="button" class="btn btn-info">Fi</button>
+                                    <button type="button" class="btn btn-success">Fo</button>
+                                    <button type="button" class="btn btn-danger">Fum</button>
+                                </div>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
                 <p>
                     Please see the <a href="./examples.html#bb-custom-dialog">Examples page</a> for more examples of custom dialogs.
                 </p>
