@@ -14,6 +14,12 @@
 }
 
 
+.bb-js .badge
+{
+    padding: 0.5rem;
+}
+
+
 .bb-header
 {
 }
@@ -114,7 +120,7 @@
 
 .bb-section
 {
-    margin: 2em 0;
+    margin: 2rem 0 4rem;
 }
 
     .bb-section .page-header
