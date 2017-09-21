@@ -387,7 +387,8 @@
                 <div class="bs-callout bs-callout-info">
                     <h4>Please note:</h4>
                     <p>
-                        Prompt requires the <code>title</code> option (when using the options object). You may use the <code>message</code>                        option, but the prompt result will <b>not</b> include any form inputs from your message.
+                        Prompt requires the <code>title</code> option (when using the options object). You may use the <code>message</code> 
+                        option, but the prompt result will <b>not</b> include any form inputs from your message.
                     </p>
                 </div>
 
@@ -420,7 +421,8 @@
                             <td>inputType</td>
                             <td>
                                 <p>
-                                    Changes the type of input generated for the prompt dialog. Valid values for <code>inputType</code>                                    are:
+                                    Changes the type of input generated for the prompt dialog. Valid values for <code>inputType</code> 
+                                    are:
                                 </p>
                                 <p>
                                     <code>text</code> (default), <code>textarea</code>, <code>email</code>, <code>select</code>,
@@ -429,7 +431,8 @@
                                     and <code>password</code>.
                                 </p>
                                 <p>
-                                    <code>email</code>, <code>date</code>, <code>time</code>, <code>number</code>, and <code>range</code>                                    all require browser support to function properly. You may want to consult <a href="http://caniuse.com">caniuse.com</a>                                    to determine if your target browsers support the input types you are intending to use.
+                                    <code>email</code>, <code>date</code>, <code>time</code>, <code>number</code>, and <code>range</code> 
+                                    all require browser support to function properly. You may want to consult <a href="http://caniuse.com">caniuse.com</a>                                    to determine if your target browsers support the input types you are intending to use.
                                 </p>
                             </td>
                         </tr>
@@ -896,6 +899,9 @@
                 <p>
                     The locale settings are used to translate the three standard button labels: OK, CONFIRM, CANCEL
                 </p>
+                <p>
+                    See the <a href="#locales-note">note on locales</a> below.
+                </p>
             </td>
         </tr>
         <tr id="bb-option-buttons">
@@ -1100,6 +1106,26 @@
                 </tr>
             </tbody>
         </table>
+        <div id="locales-note" class="bs-callout bs-callout-danger">
+            <h5>
+                <i class="fa fa-exclamation-triangle text-danger"></i>
+                Please note:
+            </h5>
+            <p>
+                To use any locale other than <code>en</code>, you must:
+            </p>
+            <ul>
+                <li>
+                    Use the <code>bootbox.all.js</code> or <code>bootbox.all.min.js</code> file, which includes all locales.
+                </li>
+                <li>
+                    Add a reference to <code>bootbox.locales.js</code> or <code>bootbox.locales.min.js</code> after <code>bootbox.js</code>.
+                </li>
+                <li>
+                    Add a reference to the target locale file, <code>fr.js</code> for example, found in the <code>src/locales</code> directory.
+                </li>
+            </ul>
+        </div>
     </section>
 
     <section id="bb-jquery-functions" class="bb-section">
