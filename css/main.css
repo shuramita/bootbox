@@ -19,14 +19,24 @@
     padding: 0.5rem;
 }
 
+.bg-dark
+{
+    background-color: #2D2D2D !important;
+}
 
 .bb-header
 {
+    background: #2D2D2D url('../images/footer_lodyas.png') repeat repeat 0 0;
+}
+
+.bb-header .jumbotron
+{
+    background: none;
+    color: #fff;
 }
 
     .bb-header h1
     {
-        color: #111;
     }
 
 .bb-docs-header
@@ -46,6 +56,11 @@
         font-weight: 700;
         text-shadow: 2px 2px 2px #777;
         font-family: Menlo,Monaco,Consolas,'Courier New',monospace;
+    }
+
+    .bb-masthead hr
+    {
+        border-top: 1px solid rgba(255,255,255,.1);
     }
 
     @media (min-width: 768px) {
@@ -206,7 +221,7 @@
 {
     margin-top: 3em;
     padding: 3em 0;
-    background: #343A40;
+    background: #2D2D2D;
     color: rgba(255, 255, 255, .5);
 }
 
