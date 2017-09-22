@@ -31,6 +31,11 @@ $(function () {
         Example.init({
             "selector": ".bb-alert"
         });
+
+        if(anchors){
+            anchors.options.placement = 'left';
+            anchors.add('.bb-example .bb-anchor');
+        }
     }
     catch (ex) {
         console.log(ex.message);

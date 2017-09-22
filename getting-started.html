@@ -110,13 +110,13 @@
 
     <div class="container">
         <section id="download" class="bb-section">
-            <h2 class="page-header">Download</h2>
+            <h2 id="bootbox-download" class="page-header bb-anchor">Download</h2>
             <p>
                 Bootbox can be added to your project in two easy ways:
             </p>
             <div class="row text-center">
                 <div class="col-md-6">
-                    <h4>Via npm</h4>
+                    <h4 id="bootbox-npm" class="bb-anchor">Via npm</h4>
                     <p>
                         Run the following command to add Bootbox to your project:
                     </p>
@@ -125,22 +125,22 @@
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <h4>Direct download</h4>
+                    <h4 id="bootbox-zip-archive" class="bb-anchor">Direct download</h4>
                     <p>
                         If you're not using npm, you can manually add Bootbox:
                     </p>
                     <p class="bb-code" style="padding: 1em; margin: 0 0 1.5em; background: #f5f5f5;">
                         <a href="#">
                             <span>
-                                <i class="fa fa-download"></i>
-                                bootbox.min.js
+                                <i class="fa fa-file-zip-o"></i>
+                                bootbox.zip
                             </span>
                         </a>
                     </p>
                 </div>
             </div>
             <div>
-                <h4>CDN</h4>
+                <h4 id="bootbox-cdn" class="bb-anchor">CDN</h4>
                 <p>
                     You can also link to a CDN reference of Bootbox.js:
                 </p>
@@ -152,7 +152,7 @@
         </section>
 
         <section id="dependencies" class="bb-section">
-            <h2 class="page-header">Dependencies</h2>
+            <h2 id="bootbox-dependencies" class="page-header bb-anchor">Dependencies</h2>
             <p>
                 All versions of Bootbox stand on the shoulders of two great giants: <a href="http://getbootstrap.com">Bootstrap</a> and <a href="http://jquery.com">jQuery</a>. The
                 exact version of Bootstrap depends on the version of Bootbox you're using. This has become slightly more complex than I'd like, but hopefully this handy
@@ -218,7 +218,7 @@
         </section>
 
         <section id="usage" class="bb-section">
-            <h2 class="page-header">Usage Instructions</h2>
+            <h2 id="usage-instructions" class="page-header bb-anchor">Usage Instructions</h2>
             <p>
                 Once you&rsquo;ve got your <a href="#dependencies">dependencies</a> sorted, usage
                 is fairly straightforward and much like any other JavaScript library you&rsquo;ve
@@ -256,7 +256,7 @@
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-            <h4>
+            <h4 id="bb-script-order" class="bb-anchor">
                 <i class="fa fa-info-circle text-danger"></i>
                 Note the order of the script references</h4>
             <p>
@@ -294,26 +294,7 @@
     <script src="./js/bootbox.js"></script>
 
     <script src="./vendor/js/prettify.min.js"></script>
-    <script>
-        $(function () {
-            try {
-                window.prettyPrint && prettyPrint();
-
-                $('#download-bootbox').on('click', function(e){
-                    e.preventDefault();
-
-                    bootbox.alert({
-                        title: 'Bootbox.js',
-                        message: '<h3><i class="fa fa-smile-o"></i> Hey there!</h3> <p>Thank you for your interest. Unfortunately, Bootbox 5 is not ready for distribution yet. ' 
-                            + 'If you want to start testing it, grab <a href="https://github.com/tiesont/bootbox">the source code</a> and ' 
-                            + 'report any issues you find.</p>'
-                    });
-                });
-            }
-            catch (ex) {
-                console.log(ex.message);
-            }
-        });
-    </script>
+    <script src="./vendor/js/anchor.min.js"></script>
+    <script src="./js/getting-started.js"></script>
 </body>
 </html>

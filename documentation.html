@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -121,26 +120,27 @@
                 IMPORTANT:
             </h4>
             <p>
-                There are some caveats to using Bootbox dialogs in place of native dialogs. Please see the <a href="#bb-notes">Known Limitations</a>                section to learn more.
+                There are some caveats to using Bootbox dialogs in place of native dialogs. Please see the 
+                <a href="#bb-notes">Known Limitations</a> section to learn more.
             </p>
         </div>
 
         <section id="bb-alert-dialog" class="bb-section">
-            <h2 class="page-header">Alert</h2>
+            <h2 id="bb-alert" class="page-header bb-anchor">Alert</h2>
             <p>
                 A simple alert dialog with a single button. Pressing the <kbd aria-label="escape">ESC</kbd> key or clicking
                 the close button dismisses the dialog.
             </p>
 
             <div id="bb-alert-basic-usage" class="bb-subsection">
-                <h3 class="bb-subsection-header">Basic Usage</h3>
+                <h3 id="alert-basic-usage" class="bb-subsection-header bb-anchor">Basic Usage</h3>
                 <p>
                     This is the simplest usage of Bootbox, requiring only the text of the message you wish to show.
                 </p>
                 <div class="bb-example bb-example-modal">
                     <pre class="prettyprint linenums"><code>bootbox.alert("Your message here&hellip;")</code></pre>
                     <figure>
-                        <figcaption>Example <b>bb.1</b></figcaption>
+                        <figcaption id="example-bb-1" class="bb-anchor">Example <b>bb.1</b></figcaption>
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
@@ -159,7 +159,7 @@
                 <div class="bb-example bb-example-modal">
                     <pre class="prettyprint linenums"><code>bootbox.alert("Your message &lt;b&gt;here&hellip;&lt;/b&gt;")</code></pre>
                     <figure>
-                        <figcaption>Example <b>bb.2</b></figcaption>
+                        <figcaption id="example-bb-2" class="bb-anchor">Example <b>bb.2</b></figcaption>
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
@@ -176,9 +176,10 @@
             </div>
 
             <div id="bb-alert-advanced-usage" class="bb-subsection">
-                <h3 class="bb-subsection-header">Advanced Usage</h3>
+                <h3 id="alert-advanced-usage" class="bb-subsection-header bb-anchor">Advanced Usage</h3>
                 <p>
-                    If you have code that should not be evaluated until your user has dismissed your alert (see <a href="bb-note-nonblocking">Bootbox Limitations</a>                    below), call it within the callback function:
+                    If you have code that should not be evaluated until your user has dismissed your alert 
+                    (see <a href="bb-note-nonblocking">Bootbox Limitations</a> below), call it within the callback function:
                 </p>
                 <pre class="prettyprint linenums"><code>bootbox.alert("Your message here&hellip;", function(){ /* your callback code */ })</code></pre>
                 <p>
@@ -193,7 +194,7 @@
     callback: function(){ /* your callback code */ }
 })</code></pre>
                     <figure>
-                        <figcaption>Example <b>bb.3</b></figcaption>
+                        <figcaption id="example-bb-3" class="bb-anchor">Example <b>bb.3</b></figcaption>
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -217,7 +218,7 @@
         </section>
 
         <section id="bb-confirm-dialog" class="bb-section">
-            <h2 class="page-header">Confirm</h2>
+            <h2 id="bb-confirm" class="page-header bb-anchor">Confirm</h2>
             <p>
                 A confirm dialog with a cancel and a confirm button. Pressing the <kbd>ESC</kbd> key or clicking close dismisses
                 the dialog and invokes the callback as if the user had clicked the cancel button.
@@ -227,15 +228,16 @@
             </p>
 
             <div class="bb-subsection">
-                <h3 class="bb-subsection-header">Basic Usage</h3>
+                <h3 id="confirm-basic-usage" class="bb-subsection-header bb-anchor">Basic Usage</h3>
                 <p>
                     The simplest method of using the <code>confirm()</code> dialog requires the text of the message you wish
-                    to show and a callback to handle the user's selection. The callback function is passed a value of <b>true</b>                    or <b>false</b>, depending on which button the user pressed.
+                    to show and a callback to handle the user's selection. The callback function is passed a value of <b>true</b> 
+                    or <b>false</b>, depending on which button the user pressed.
                 </p>
                 <div class="bb-example bb-example-modal">
                     <pre class="prettyprint linenums"><code>bootbox.confirm("Are you sure?", function(result){ /* your callback code */ })</code></pre>
                     <figure>
-                        <figcaption>Example <b>bb.4</b></figcaption>
+                        <figcaption id="example-bb-4" class="bb-anchor">Example <b>bb.4</b></figcaption>
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
@@ -251,17 +253,19 @@
                     </figure>
                 </div>
                 <div class="bs-callout bs-callout-danger">
-                    <h4>Please note:</h4>
+                    <h5 id="confirm-callout-callback" class="bb-anchor"><i class="fa fa-exclamation-triangle text-danger"></i> Please note:</h5>
                     <p>
-                        <b>All</b> Bootstrap modals, unlike native alerts, confirms, or prompts, generate <b>non-blocking</b>                        events. Keep that in mind when using the <code>confirm()</code> dialog, as it is <b>not</b> a drop-in
-                        replacement for native confirm dialogs. Any code that depends on the user's selection <b>must</b>                        be placed in the callback function.
+                        <b>All</b> Bootstrap modals, unlike native alerts, confirms, or prompts, generate <b>non-blocking</b> 
+                        events. Keep that in mind when using the <code>confirm()</code> dialog, as it is <b>not</b> a drop-in
+                        replacement for native confirm dialogs. Any code that depends on the user's selection <b>must</b> 
+                        be placed in the callback function.
                     </p>
                 </div>
 
             </div>
 
             <div class="bb-subsection">
-                <h3 class="bb-subsection-header">Advanced Usage</h3>
+                <h3 id="confirm-advanced-usage" class="bb-subsection-header bb-anchor">Advanced Usage</h3>
                 <p>
                     Confirm dialogs can be customized, using the <a href="#bb-options">options described below</a>. Here's
                     an example of a small confirm, using <code>size</code>:
@@ -273,7 +277,7 @@
     callback: function(result){ /* result is a boolean; true = OK, false = Cancel*/ }
 })</code></pre>
                     <figure>
-                        <figcaption>Example <b>bb.5</b></figcaption>
+                        <figcaption id="example-bb-5" class="bb-anchor">Example <b>bb.5</b></figcaption>
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content">
                                 <div class="modal-body">
@@ -295,7 +299,7 @@
         </section>
 
         <section id="bb-prompt-dialog" class="bb-section">
-            <h2 class="page-header">Prompt</h2>
+            <h2 id="bb-prompt" class="page-header bb-anchor">Prompt</h2>
             <p>
                 A dialog which prompts for user input. Pressing the <kbd>ESC</kbd> key or clicking close dismisses the dialog
                 and invokes the callback as if the user had clicked the cancel button.
@@ -305,7 +309,7 @@
             </p>
 
             <div class="bb-subsection">
-                <h3 class="bb-subsection-header">Basic Usage</h3>
+                <h3 id="prompt-basic-usage" class="bb-subsection-header bb-anchor">Basic Usage</h3>
                 <p>
                     The simplest usage of the <code>prompt()</code> dialog requires the text of the message you wish to show
                     and a callback to handle the user's input. The value entered will be <b>null</b> if the user cancelled
@@ -314,7 +318,7 @@
                 <div class="bb-example bb-example-modal">
                     <pre class="prettyprint linenums"><code>bootbox.prompt("What is your name?", function(result){ /* your callback code */ })</code></pre>
                     <figure>
-                        <figcaption>Example <b>bb.6</b></figcaption>
+                        <figcaption id="example-bb-6" class="bb-anchor">Example <b>bb.6</b></figcaption>
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -337,9 +341,10 @@
                     </figure>
                 </div>
                 <div class="bs-callout bs-callout-danger">
-                    <h4>Please note:</h4>
+                    <h5 id="prompt-callout-callback" class="bb-anchor"><i class="fa fa-exclamation-triangle text-danger"></i> Please note:</h5>
                     <p>
-                        <b>All</b> Bootstrap modals, unlike native alerts, confirms, or prompts, generate <b>non-blocking</b>                        events. Keep that in mind when using the <code>prompt()</code> dialog, as it is <b>not</b> a drop-in
+                        <b>All</b> Bootstrap modals, unlike native alerts, confirms, or prompts, generate <b>non-blocking</b> 
+                        events. Keep that in mind when using the <code>prompt()</code> dialog, as it is <b>not</b> a drop-in
                         replacement for native prompt dialogs. Any code that depends on the user's input <b>must</b> be placed
                         in the callback function.
                     </p>
@@ -347,7 +352,7 @@
             </div>
 
             <div class="bb-subsection">
-                <h3 class="bb-subsection-header">Advanced Usage</h3>
+                <h3 id="prompt-advanced-usage" class="bb-subsection-header bb-anchor">Advanced Usage</h3>
                 <p>
                     Prompt dialogs can also be customized, using the <a href="#bb-options">options described below</a>. Here's
                     an example of a small prompt, using <code>size</code>:
@@ -359,7 +364,7 @@
     callback: function(result){ /* result = String containing user input if OK clicked or null if Cancel clicked */ }
 })</code></pre>
                     <figure>
-                        <figcaption>Example <b>bb.7</b></figcaption>
+                        <figcaption id="example-bb-7" class="bb-anchor">Example <b>bb.7</b></figcaption>
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -385,14 +390,16 @@
                     <b>Requires Bootstrap 3.1.0 or newer</b>.
                 </p>
                 <div class="bs-callout bs-callout-info">
-                    <h4>Please note:</h4>
+                    <h5 id="prompt-callout-title" class="bb-anchor">
+                        <i class="fa fa-info-circle text-info"></i> Please note:
+                    </h5>
                     <p>
                         Prompt requires the <code>title</code> option (when using the options object). You may use the <code>message</code> 
                         option, but the prompt result will <b>not</b> include any form inputs from your message.
                     </p>
                 </div>
 
-                <h4>
+                <h4 id="prompt-options" class="bb-anchor">
                     Prompt Dialog Options
                 </h4>
                 <p>
@@ -400,17 +407,22 @@
                     options below.
                 </p>
                 <table class="table table-bordered table-striped table-responsive">
+                    <colgroup>
+                        <col class="col-name" />
+                        <col class="col-type" />
+                        <col class="col-description" />
+                    </colgroup>
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Type</th>
                             <th>Description</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                value
-                            </td>
+                            <td><span id="prompt-option-value" class="bb-anchor">value</span></td>
+                            <td>String | Number | Array</td>
                             <td>
                                 <p>
                                     You can set the initial value of the prompt using the <code>value</code> option.
@@ -418,11 +430,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>inputType</td>
+                            <td><span id="prompt-option-input-type" class="bb-anchor">inputType</span></td>
+                            <td>String</td>
                             <td>
                                 <p>
-                                    Changes the type of input generated for the prompt dialog. Valid values for <code>inputType</code> 
-                                    are:
+                                    Changes the type of input generated for the prompt dialog. Valid values for <code>inputType</code> are:
                                 </p>
                                 <p>
                                     <code>text</code> (default), <code>textarea</code>, <code>email</code>, <code>select</code>,
@@ -437,7 +449,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>inputOptions</td>
+                            <td><span id="prompt-option-input-options" class="bb-anchor">inputOptions</span></td>
+                            <td>Array</td>
                             <td>
                                 <p>
                                     If you specify <code>select</code>, <code>checkbox</code>, or <code>radio</code> as the
@@ -457,7 +470,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>min, max</td>
+                            <td><span id="prompt-option-min-max" class="bb-anchor">min, max</span></td>
+                            <td>String | Number | Date string | Time string</td>
                             <td>
                                 <p>
                                     The <code>min</code> or <code>max</code> value for the <code>&lt;input&gt;</code> element.
@@ -472,7 +486,7 @@
                                     For <code>time</code>, <code>min</code>/<code>max</code> must a valid partial time value,
                                     in the form of <code>HH:MM:SS</code>, where <code>HH</code> can be any zero-padded value
                                     between <code>00</code> and <code>23</code> and
-                                    <code>MM</code> and <code>SS</code> can be any zero-padded number between <code>00</code>                                    and <code>59</code>.
+                                    <code>MM</code> and <code>SS</code> can be any zero-padded number between <code>00</code> and <code>59</code>.
                                 </p>
                                 <p>
                                     For <code>date</code>, <code>min</code>/<code>max</code> must a date value in the form
@@ -484,13 +498,14 @@
                                 </p>
                                 <p>
                                     See the MDN article for
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-min">min</a>                                    or
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-max">min</a>                                    for more information.
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-min">min</a> or
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-max">min</a> for more information.
                                 </p>
                             </td>
                         </tr>
                         <tr>
-                            <td>step</td>
+                            <td><span id="prompt-option-step" class="bb-anchor">step</span></td>
+                            <td>String | Number</td>
                             <td>
                                 <p>
                                     The <code>step</code> value for the <code>&lt;input&gt;</code> element. Only valid for
@@ -513,7 +528,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>pattern</td>
+                            <td><span id="prompt-option-pattern" class="bb-anchor">pattern</span></td>
+                            <td>String</td>
                             <td>
                                 <p>
                                     Set the <code>pattern</code> option to require the input value to follow a specific format.
@@ -531,7 +547,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>required</td>
+                            <td><span id="prompt-option-required" class="bb-anchor">required</span></td>
+                            <td>Boolean</td>
                             <td>
                                 <p>
                                     Set the <code>required</code> option to <code>true</code> to require an input value.
@@ -558,7 +575,7 @@
         </section>
 
         <section id="bb-custom-dialog" class="bb-section">
-            <h2 class="page-header">Custom Dialog</h2>
+            <h2 id="custom-dialog" class="page-header bb-anchor">Custom Dialog</h2>
             <p>
                 A completely customisable dialog method which takes a single argument - an options object.
             </p>
@@ -571,7 +588,7 @@
             </div>
 
             <div class="bb-subsection">
-                <h3 class="bb-subsection-header">Basic Usage</h3>
+                <h3 id="dialog-basic" class="bb-subsection-header bb-anchor">Basic Usage</h3>
                 <p>
                     The minimum required to create a custom dialog is the <code>message</code> option, which will create
                     a non-dismissable dialog (useful as a "loading" overlay).
@@ -579,7 +596,7 @@
                 <div class="bb-example bb-example-modal">
                     <pre class="prettyprint linenums"><code>bootbox.dialog({ message: '&lt;div class="text-center"&gt;&lt;i class="fa fa-spin fa-spinner"&gt;&lt;/i&gt; Loading...&lt;/div&gt;' })</code></pre>
                     <figure>
-                        <figcaption>Example <b>bb.8</b></figcaption>
+                        <figcaption id="example-bb-8" class="bb-anchor">Example <b>bb.8</b></figcaption>
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
@@ -594,7 +611,7 @@
             </div>
 
             <div class="bb-subsection">
-                <h3 class="bb-subsection-header">Advanced Usage</h3>
+                <h3 id="dialog-advanced" class="bb-subsection-header bb-anchor">Advanced Usage</h3>
                 <p>
                     As noted above, the only required option for a custom dialog is <code>message</code>. Custom dialogs
                     also do not utilize a global callback; each button you add should have it's own callback function. Here's
@@ -639,7 +656,7 @@
     }
 })</code></pre>
                     <figure>
-                        <figcaption>Example <b>bb.9</b></figcaption>
+                        <figcaption id="example-bb-9" class="bb-anchor">Example <b>bb.9</b></figcaption>
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -668,9 +685,8 @@
             </div>
         </section>
 
-        <span id="bb-options">
-        <section class="bb-section">
-            <h2 class="page-header">Dialog Options</h2>
+        <section id="bb-options" class="bb-section">
+            <h2 id="dialog-options" class="page-header bb-anchor">Dialog Options</h2>
             <p>
                 Bootbox dialogs can be configured using the options below.
             </p>
@@ -689,9 +705,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr id="bb-option-message">
+                        <tr>
                             <td>
-                                <p>message</p>
+                                <span id="bb-option-message" class="bb-anchor">message</span>
                             </td>
                             <td>String | Element</td>
                             <td>
@@ -702,65 +718,63 @@
                                     <span class="badge badge-danger">
                                         Required for alert, confirm, and custom dialogs
                                     </span>
-        </p>
-        </td>
-        </tr>
-        <tr id="bb-option-title">
-            <td>title</td>
-            <td>String | Element</td>
-            <td>
-                <p>
-                    Adds a header to the dialog and places this text (or markup) in an <code>&lt;h5&gt;</code> element.
-                </p>
-                <p>
-                    <span class="badge badge-danger">
-                                        Required for prompts
-                                    </span>
-                </p>
-            </td>
-        </tr>
-        <tr id="bb-option-callback">
-            <td>
-                <p>callback</p>
-            </td>
-            <td>Function</td>
-            <td>
-                <p>
-                    <span class="badge badge-danger">
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="bb-option-title" class="bb-anchor">title</span></td>
+                            <td>String | Element</td>
+                            <td>
+                                <p>
+                                    Adds a header to the dialog and places this text (or markup) in an <code>&lt;h5&gt;</code> element.
+                                </p>
+                                <p>
+                                    <span class="badge badge-danger">Required for prompts</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span id="bb-option-callback" class="bb-anchor">callback</span>
+                            </td>
+                            <td>Function</td>
+                            <td>
+                                <p>
+                                    <span class="badge badge-danger">
                                         Required for confirm and prompt
                                     </span>
-                    <span class="badge badge-info">
+                                    <span class="badge badge-info">
                                         Not called for custom dialogs
                                     </span>
-                </p>
-                <p>
-                    An alert callback should not supply an argument; it will be ignored if it does:
-                </p>
-                <pre class="prettyprint linenums"><code>bootbox.alert({ message: "I'm an alert!", callback: function() {} })</code></pre>
-                <p>
-                    Confirm and prompt callbacks <b>must</b> supply an argument for the result; for confirm, it will be a
-                    <code>true</code> or <code>false</code> value, while the prompt result will hold the value(s) entered
-                    by the user:
-                </p>
-                <pre class="prettyprint linenums"><code>bootbox.confirm("Are you sure?", function(result) {
+                                </p>
+                                <p>
+                                    An alert callback should not supply an argument; it will be ignored if it does:
+                                </p>
+                                <pre class="prettyprint linenums"><code>bootbox.alert({ message: "I'm an alert!", callback: function() {} })</code></pre>
+                                <p>
+                                    Confirm and prompt callbacks <b>must</b> supply an argument for the result; for confirm,
+                                    it will be a
+                                    <code>true</code> or <code>false</code> value, while the prompt result will hold the
+                                    value(s) entered by the user:
+                                </p>
+                                <pre class="prettyprint linenums"><code>bootbox.confirm("Are you sure?", function(result) {
     // result will be true or false
 }); </code></pre>
-                <p>
-                    or
-                </p>
-                <pre class="prettyprint linenums"><code>bootbox.prompt("What is your name?", function(result) {
+                                <p>
+                                    or
+                                </p>
+                                <pre class="prettyprint linenums"><code>bootbox.prompt("What is your name?", function(result) {
     if (result === null) {
         // Prompt dismissed
     } else {
         // result has a value
     }
 }); </code></pre>
-                <p>
-                    For any callback, if you do not want the dialog to close when the callback completes, add <code>return false;</code> 
-                    as the last line of the callback. You will then need to manually dismiss the dialog using the <code>modal()</code> 
-                    function or <code>bootbox.hideAll()</code>:
-                </p>
-                <pre class="prettyprint linenums"><code>var dialog = bootbox.prompt("What is your name?", function(result) {
+                                <p>
+                                    For any callback, if you do not want the dialog to close when the callback completes, add <code>return false;</code>                                    as the last line of the callback. You will then need to manually dismiss the dialog using
+                                    the <code>modal()</code> function or <code>bootbox.hideAll()</code>:
+                                </p>
+                                <pre class="prettyprint linenums"><code>var dialog = bootbox.prompt("What is your name?", function(result) {
     if (result === null) {
         // Prompt dismissed
     } else {
@@ -770,188 +784,190 @@
 
     return false;
 }); </code></pre>
-                <p>
-                    Default: <code>null</code>
-                </p>
-            </td>
-        </tr>
-        <tr id="bb-option-onEscape">
-            <td>onEscape</td>
-            <td>Boolean | Function</td>
-            <td>
-                <p>
-                    Allows the user to dismiss the dialog by hitting <kbd>ESC</kbd>, which will invoke this function.
-                </p>
-                <h6>Options:</h6>
-                <table class="table table-condensed">
-                    <colgroup>
-                        <col style="width: 150px;" />
-                        <col />
-                    </colgroup>
-                    <tr>
-                        <td>Undefined (<code>null</code>)</td>
-                        <td>No callback function has been provided.</td>
-                    </tr>
-                    <tr>
-                        <td><code>true</code></td>
-                        <td>Hitting the <kbd>ESC</kbd> dismisses the dialog.</td>
-                    </tr>
-                    <tr>
-                        <td><code>false</code></td>
-                        <td>Hitting the <kbd>ESC</kbd> does <b>not</b> dismiss the dialog.</td>
-                    </tr>
-                </table>
-                <p>Default: <code>true</code> for alert, confirm, and prompt; <code>null</code> for custom dialogs.</p>
-            </td>
-        </tr>
-        <tr id="bb-option-show">
-            <td>show</td>
-            <td>Boolean</td>
-            <td>
-                <p>Whether the dialog should be shown immediately.</p>
-                <p>Default: <code>true</code></pre>
-            </td>
-        </tr>
-        <tr id="bb-option-backdrop">
-            <td>backdrop</td>
-            <td>Boolean</td>
-            <td>
-                <p>
-                    Whether the dialog should be have a backdrop or not. Also determines whether clicking on the backdrop dismisses the modal.
-                </p>
-                <h6>Options:</h6>
-                <table class="table table-condensed">
-                    <colgroup>
-                        <col style="width: 150px;" />
-                        <col />
-                    </colgroup>
-                    <tr>
-                        <td>Undefined (<code>null</code>)</td>
-                        <td>The backdrop is displayed, but clicking on it has no effect.</td>
-                    </tr>
-                    <tr>
-                        <td><code>true</code> * </td>
-                        <td>The backdrop is displayed, and clicking on it dismisses the dialog.</td>
-                    </tr>
-                    <tr>
-                        <td><code>false</code></td>
-                        <td>The backdrop is not displayed.</td>
-                    </tr>
-                </table>
-                <p>Default: <code>null</code></pre>
-                    <p class="alert alert-info">
-                        <b>*</b> When this value is set to <code>true</code>, the dialog will only dismiss when <code>onEscape</code>                        is also set to <code>true</code> or some callback function.
-                    </p>
-            </td>
-        </tr>
-        <tr id="bb-option-closeButton">
-            <td>closeButton</td>
-            <td>Boolean</td>
-            <td>
-                <p>
-                    Whether the dialog should have a close button or not.
-                </p>
-                <p>Default: <code>true</code></pre>
-            </td>
-        </tr>
-        <tr id="bb-option-animate">
-            <td>animate</td>
-            <td>Boolean</td>
-            <td>
-                <p>
-                    Animate the dialog in and out (requires a browser which <a href="http://caniuse.com/#search=css-animation">supports CSS animations</a>).
-                </p>
-                <p>Default: <code>true</code></pre>
-            </td>
-        </tr>
-        <tr id="bb-option-className">
-            <td>className</td>
-            <td>String</td>
-            <td>
-                <p>
-                    An additional class to apply to the dialog wrapper.
-                </p>
-                <p>Default: <code>null</code></pre>
-            </td>
-        </tr>
-        <tr id="bb-option-size">
-            <td>size</td>
-            <td>String</td>
-            <td>
-                <p>
-                    Adds the relevant Bootstrap modal size class to the dialog wrapper. Valid values are
-                    <code>'large'</code> and <code>'small'</code>
-                </p>
-                <p>
-                    <b>Requires Bootstrap 3.1.0 or newer</b>.
-                </p>
-                <p>Default: <code>null</code></pre>
-            </td>
-        </tr>
-        <tr id="bb-option-locale">
-            <td>locale</td>
-            <td>string</td>
-            <td>
-                <p>
-                    Sets the locale to use <em>per dialog</em> &mdash; this option does not override the default locale.
-                    Other dialogs will still use the default locale.
-                </p>
-                <p>
-                    The locale settings are used to translate the three standard button labels: OK, CONFIRM, CANCEL
-                </p>
-                <p>
-                    See the <a href="#locales-note">note on locales</a> below.
-                </p>
-            </td>
-        </tr>
-        <tr id="bb-option-buttons">
-            <td>
-                <p>buttons</p>
-            </td>
-            <td>Object</td>
-            <td>
-                <p>
-                    Buttons are defined as JavaScript objects. The minimum shortform requirement to define a button is:
-                </p>
-                <pre class="prettyprint linenums"><code>"Your button text": function() { }</code></pre>
-                <p>
-                    The complete definition of a button object is:
-                </p>
-                <pre class="prettyprint linenums"><code>buttonName : {
+                                <p>
+                                    Default: <code>null</code>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="bb-option-onEscape" class="bb-anchor">onEscape</span></td>
+                            <td>Boolean | Function</td>
+                            <td>
+                                <p>
+                                    Allows the user to dismiss the dialog by hitting <kbd>ESC</kbd>, which will invoke this
+                                    function.
+                                </p>
+                                <h6>Options:</h6>
+                                <table class="table table-condensed">
+                                    <colgroup>
+                                        <col style="width: 150px;" />
+                                        <col />
+                                    </colgroup>
+                                    <tr>
+                                        <td>Undefined (<code>null</code>)</td>
+                                        <td>No callback function has been provided.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>true</code></td>
+                                        <td>Hitting the <kbd>ESC</kbd> dismisses the dialog.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>false</code></td>
+                                        <td>Hitting the <kbd>ESC</kbd> does <b>not</b> dismiss the dialog.</td>
+                                    </tr>
+                                </table>
+                                <p>Default: <code>true</code> for alert, confirm, and prompt; <code>null</code> for custom dialogs.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="bb-option-show" class="bb-anchor">show</span></td>
+                            <td>Boolean</td>
+                            <td>
+                                <p>Whether the dialog should be shown immediately.</p>
+                                <p>Default: <code>true</code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="bb-option-backdrop" class="bb-anchor">backdrop</span></td>
+                            <td>Boolean</td>
+                            <td>
+                                <p>
+                                    Whether the dialog should be have a backdrop or not. Also determines whether clicking on the backdrop dismisses the modal.
+                                </p>
+                                <h6>Options:</h6>
+                                <table class="table table-condensed">
+                                    <colgroup>
+                                        <col style="width: 150px;" />
+                                        <col />
+                                    </colgroup>
+                                    <tr>
+                                        <td>Undefined (<code>null</code>)</td>
+                                        <td>The backdrop is displayed, but clicking on it has no effect.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>true</code> * </td>
+                                        <td>The backdrop is displayed, and clicking on it dismisses the dialog.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>false</code></td>
+                                        <td>The backdrop is not displayed.</td>
+                                    </tr>
+                                </table>
+                                <p>Default: <code>null</code></pre>
+                                    <p class="alert alert-info">
+                                        <b>*</b> When this value is set to <code>true</code>, the dialog will only dismiss
+                                        when <code>onEscape</code> is also set to <code>true</code> or some callback function.
+                                    </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="bb-option-closeButton" class="bb-anchor">closeButton</span></td>
+                            <td>Boolean</td>
+                            <td>
+                                <p>
+                                    Whether the dialog should have a close button or not.
+                                </p>
+                                <p>Default: <code>true</code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="bb-option-animate" class="bb-anchor">animate</span></td>
+                            <td>Boolean</td>
+                            <td>
+                                <p>
+                                    Animate the dialog in and out (requires a browser which <a href="http://caniuse.com/#search=css-animation">supports CSS animations</a>).
+                                </p>
+                                <p>Default: <code>true</code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="bb-option-className" class="bb-anchor">className</span></td>
+                            <td>String</td>
+                            <td>
+                                <p>
+                                    An additional class to apply to the dialog wrapper.
+                                </p>
+                                <p>Default: <code>null</code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="bb-option-size" class="bb-anchor">size</span></td>
+                            <td>String</td>
+                            <td>
+                                <p>
+                                    Adds the relevant Bootstrap modal size class to the dialog wrapper. Valid values are
+                                    <code>'large'</code> and <code>'small'</code>
+                                </p>
+                                <p>
+                                    <b>Requires Bootstrap 3.1.0 or newer</b>.
+                                </p>
+                                <p>Default: <code>null</code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="bb-option-locale" class="bb-anchor">locale</span></td>
+                            <td>String</td>
+                            <td>
+                                <p>
+                                    Sets the locale to use <em>per dialog</em> &mdash; this option does not override the
+                                    default locale. Other dialogs will still use the default locale.
+                                </p>
+                                <p>
+                                    The locale settings are used to translate the three standard button labels: OK, CONFIRM, CANCEL
+                                </p>
+                                <p>
+                                    See the <a href="#locales-note">note on locales</a> below.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span id="bb-option-buttons" class="bb-anchor">buttons</span>
+                            </td>
+                            <td>Object</td>
+                            <td>
+                                <p>
+                                    Buttons are defined as JavaScript objects. The minimum shortform requirement to define a button is:
+                                </p>
+                                <pre class="prettyprint linenums"><code>"Your button text": function() { }</code></pre>
+                                <p>
+                                    The complete definition of a button object is:
+                                </p>
+                                <pre class="prettyprint linenums"><code>buttonName : {
     label: 'Your button text',
     className: "some-class",
     callback: function() { }
 }</code></pre>
 
-                <h6>Options:</h6>
-                <table class="table table-responsive">
-                    <colgroup>
-                        <col style="width: 75px;" />
-                        <col />
-                    </colgroup>
-                    <tr>
-                        <td>alert</td>
-                        <td>
-                            <code>ok</code>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>confirm</td>
-                        <td>
-                            <code>cancel, confirm</code>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>prompt</td>
-                        <td>
-                            <code>cancel, confirm</code>
-                        </td>
-                    </tr>
-                </table>
-                <p>
-                    Each of the available button options can be overridden to use custom content (text or HTML) and CSS styles. For example:
-                </p>
-                <pre class="prettyprint linenums"><code>bootbox.confirm({
+                                <h6>Options:</h6>
+                                <table class="table table-responsive">
+                                    <colgroup>
+                                        <col style="width: 75px;" />
+                                        <col />
+                                    </colgroup>
+                                    <tr>
+                                        <td>alert</td>
+                                        <td>
+                                            <code>ok</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>confirm</td>
+                                        <td>
+                                            <code>cancel, confirm</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>prompt</td>
+                                        <td>
+                                            <code>cancel, confirm</code>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    Each of the available button options can be overridden to use custom content (text or HTML) and CSS styles. For example:
+                                </p>
+                                <pre class="prettyprint linenums"><code>bootbox.confirm({
     message: "This is a confirm with custom button text and color! Do you like it?",
     buttons: {
         confirm: {
@@ -967,188 +983,188 @@
         // ...
     }
 });</code></pre>
+                                <p>
+                                    You <b>cannot</b> override the callbacks for the alert, confirm, and prompt dialog's
+                                    buttons.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="bb-available-locales" class="bb-section">
+            <h2 id="available-locales" class="page-header bb-anchor">Available Locales</h2>
+            <p>The following locales are available:</p>
+            <table class="table table-sm table-striped table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th style="width: 4rem;">Key</th>
+                        <th>Name</th>
+                        <th style="width: 4rem;">Key</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>ar</code></td>
+                        <td>Arabic</td>
+                        <td><code>az</code></td>
+                        <td>Azerbaijani</td>
+                    </tr>
+                    <tr>
+                        <td><code>bg_BG</code></td>
+                        <td>Bulgarian</td>
+                        <td><code>br</code></td>
+                        <td>Portuguese - Brazil</td>
+                    </tr>
+                    <tr>
+                        <td><code>cs</code></td>
+                        <td>Czech</td>
+                        <td><code>da</code></td>
+                        <td>Danish</td>
+                    </tr>
+                    <tr>
+                        <td><code>de</code></td>
+                        <td>German</td>
+                        <td><code>el</code></td>
+                        <td>Greek</td>
+                    </tr>
+                    <tr>
+                        <td><code>en</code></td>
+                        <td>English</td>
+                        <td><code>es</code></td>
+                        <td>Spanish / Español</td>
+                    </tr>
+                    <tr>
+                        <td><code>et</code></td>
+                        <td>Estonian</td>
+                        <td><code>eu</code></td>
+                        <td>Basque</td>
+                    </tr>
+                    <tr>
+                        <td><code>fa</code></td>
+                        <td>Farsi / Persian</td>
+                        <td><code>fi</code></td>
+                        <td>Finnish</td>
+                    </tr>
+                    <tr>
+                        <td><code>fr</code></td>
+                        <td>French / Français</td>
+                        <td><code>he</code></td>
+                        <td>Hebrew</td>
+                    </tr>
+                    <tr>
+                        <td><code>hr</code></td>
+                        <td>Croatian</td>
+                        <td><code>hu</code></td>
+                        <td>Hungarian</td>
+                    </tr>
+                    <tr>
+                        <td><code>id</code></td>
+                        <td>Indonesian</td>
+                        <td><code>it</code></td>
+                        <td>Italian</td>
+                    </tr>
+                    <tr>
+                        <td><code>ja</code></td>
+                        <td>Japanese</td>
+                        <td><code>lt</code></td>
+                        <td>Lithuanian</td>
+                    </tr>
+                    <tr>
+                        <td><code>lv</code></td>
+                        <td>Latvian</td>
+                        <td><code>nl</code></td>
+                        <td>Dutch</td>
+                    </tr>
+                    <tr>
+                        <td><code>no</code></td>
+                        <td>Norwegian</td>
+                        <td><code>pl</code></td>
+                        <td>Polish</td>
+                    </tr>
+                    <tr>
+                        <td><code>pt</code></td>
+                        <td>Portuguese</td>
+                        <td><code>ru</code></td>
+                        <td>Russian</td>
+                    </tr>
+                    <tr>
+                        <td><code>sk</code></td>
+                        <td>Slovak</td>
+                        <td><code>sl</code></td>
+                        <td>Slovenian</td>
+                    </tr>
+                    <tr>
+                        <td><code>sq</code></td>
+                        <td>Albanian</td>
+                        <td><code>sv</code></td>
+                        <td>Swedish</td>
+                    </tr>
+                    <tr>
+                        <td><code>th</code></td>
+                        <td>Thai</td>
+                        <td><code>tr</code></td>
+                        <td>Turkish</td>
+                    </tr>
+                    <tr>
+                        <td><code>uk</code></td>
+                        <td>Ukrainian</td>
+                        <td><code>zh_CN</code></td>
+                        <td>Chinese (People's Republic of China)</td>
+                    </tr>
+                    <tr>
+                        <td><code>zh_TW</code></td>
+                        <td>Chinese (Taiwan / Republic of China)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="bs-callout bs-callout-danger">
+                <h5 id="locales-note" class="bb-anchor">
+                    <i class="fa fa-exclamation-triangle text-danger"></i> Please note:
+                </h5>
                 <p>
-                    You <b>cannot</b> override the callbacks for the alert, confirm, and prompt dialog's buttons.
+                    To use any locale other than <code>en</code>, you must:
                 </p>
-            </td>
-        </tr>
-        </tbody>
-        </table>
-    </div>
-    </section>
+                <ul>
+                    <li>
+                        Use the <code>bootbox.all.js</code> or <code>bootbox.all.min.js</code> file, which includes all locales.
+                    </li>
+                    <li>
+                        Add a reference to <code>bootbox.locales.js</code> or <code>bootbox.locales.min.js</code> after <code>bootbox.js</code>.
+                    </li>
+                    <li>
+                        Add a reference to the target locale file, <code>fr.js</code> for example, found in the <code>src/locales</code> directory.
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-    <section id="bb-available-locales" class="bb-section">
-        <h2 class="page-header">Available Locales</h2>
-        <p id="available-locales">The following locales are available:</p>
-        <table class="table table-sm table-striped table-bordered table-responsive">
-            <thead>
-                <tr>
-                    <th style="width: 4rem;">Key</th>
-                    <th>Name</th>
-                    <th style="width: 4rem;">Key</th>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>ar</code></td>
-                    <td>Arabic</td>
-                    <td><code>az</code></td>
-                    <td>Azerbaijani</td>
-                </tr>
-                <tr>
-                    <td><code>bg_BG</code></td>
-                    <td>Bulgarian</td>
-                    <td><code>br</code></td>
-                    <td>Portuguese - Brazil</td>
-                </tr>
-                <tr>
-                    <td><code>cs</code></td>
-                    <td>Czech</td>
-                    <td><code>da</code></td>
-                    <td>Danish</td>
-                </tr>
-                <tr>
-                    <td><code>de</code></td>
-                    <td>German</td>
-                    <td><code>el</code></td>
-                    <td>Greek</td>
-                </tr>
-                <tr>
-                    <td><code>en</code></td>
-                    <td>English</td>
-                    <td><code>es</code></td>
-                    <td>Spanish / Español</td>
-                </tr>
-                <tr>
-                    <td><code>et</code></td>
-                    <td>Estonian</td>
-                    <td><code>eu</code></td>
-                    <td>Basque</td>
-                </tr>
-                <tr>
-                    <td><code>fa</code></td>
-                    <td>Farsi / Persian</td>
-                    <td><code>fi</code></td>
-                    <td>Finnish</td>
-                </tr>
-                <tr>
-                    <td><code>fr</code></td>
-                    <td>French / Français</td>
-                    <td><code>he</code></td>
-                    <td>Hebrew</td>
-                </tr>
-                <tr>
-                    <td><code>hr</code></td>
-                    <td>Croatian</td>
-                    <td><code>hu</code></td>
-                    <td>Hungarian</td>
-                </tr>
-                <tr>
-                    <td><code>id</code></td>
-                    <td>Indonesian</td>
-                    <td><code>it</code></td>
-                    <td>Italian</td>
-                </tr>
-                <tr>
-                    <td><code>ja</code></td>
-                    <td>Japanese</td>
-                    <td><code>lt</code></td>
-                    <td>Lithuanian</td>
-                </tr>
-                <tr>
-                    <td><code>lv</code></td>
-                    <td>Latvian</td>
-                    <td><code>nl</code></td>
-                    <td>Dutch</td>
-                </tr>
-                <tr>
-                    <td><code>no</code></td>
-                    <td>Norwegian</td>
-                    <td><code>pl</code></td>
-                    <td>Polish</td>
-                </tr>
-                <tr>
-                    <td><code>pt</code></td>
-                    <td>Portuguese</td>
-                    <td><code>ru</code></td>
-                    <td>Russian</td>
-                </tr>
-                <tr>
-                    <td><code>sk</code></td>
-                    <td>Slovak</td>
-                    <td><code>sl</code></td>
-                    <td>Slovenian</td>
-                </tr>
-                <tr>
-                    <td><code>sq</code></td>
-                    <td>Albanian</td>
-                    <td><code>sv</code></td>
-                    <td>Swedish</td>
-                </tr>
-                <tr>
-                    <td><code>th</code></td>
-                    <td>Thai</td>
-                    <td><code>tr</code></td>
-                    <td>Turkish</td>
-                </tr>
-                <tr>
-                    <td><code>uk</code></td>
-                    <td>Ukrainian</td>
-                    <td><code>zh_CN</code></td>
-                    <td>Chinese (People's Republic of China)</td>
-                </tr>
-                <tr>
-                    <td><code>zh_TW</code></td>
-                    <td>Chinese (Taiwan / Republic of China)</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-        <div id="locales-note" class="bs-callout bs-callout-danger">
-            <h5>
-                <i class="fa fa-exclamation-triangle text-danger"></i>
-                Please note:
-            </h5>
-            <p>
-                To use any locale other than <code>en</code>, you must:
-            </p>
-            <ul>
-                <li>
-                    Use the <code>bootbox.all.js</code> or <code>bootbox.all.min.js</code> file, which includes all locales.
-                </li>
-                <li>
-                    Add a reference to <code>bootbox.locales.js</code> or <code>bootbox.locales.min.js</code> after <code>bootbox.js</code>.
-                </li>
-                <li>
-                    Add a reference to the target locale file, <code>fr.js</code> for example, found in the <code>src/locales</code> directory.
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="bb-jquery-functions" class="bb-section">
-        <h2 class="page-header">Using jQuery Functions with Bootbox</h2>
-        <div class="bb-function">
-            <h3></h3>
-            <p>
-                The Bootbox object returned from each of the dialog functions is a jQuery object. As such, you can chain most jQuery 
-                functions onto the result of a Bootbox dialog. Here's an example showing how to handle Bootstrap's <code>shown.bs.modal</code> 
-                event, using <a href="http://api.jquery.com/on/">.on()</a>:
-            </p>
-            <pre class="prettyprint linenums"><code>var dialog = bootbox.dialog({
+        <section id="bb-jquery-functions" class="bb-section">
+            <h2 class="page-header">Using jQuery Functions with Bootbox</h2>
+            <div class="bb-function">
+                <p id="jquery-functions" class="bb-anchor">
+                    The Bootbox object returned from each of the dialog functions is a jQuery object. As such, you can chain most jQuery functions
+                    onto the result of a Bootbox dialog. Here's an example showing how to handle Bootstrap's <code>shown.bs.modal</code> 
+                    event, using <a href="http://api.jquery.com/on/">.on()</a>:
+                </p>
+                <pre class="prettyprint linenums"><code>var dialog = bootbox.dialog({
     /* Your options... */
 });
 
 dialog.on('shown.bs.modal', function(e){
     // Do something with the dialog just after it has been shown to the user...
 });</code></pre>
-            <p>
-                If you set the <code>show</code> option to <code>false</code>, you can also use Bootstrap's 
-                <a href="http://getbootstrap.com/docs/4.0/components/modal/">modal()</a> function to show and hide your dialog manually:
-            </p>
-            <pre class="prettyprint linenums"><code>var dialog = bootbox.dialog({
+                <p>
+                    If you set the <code>show</code> option to <code>false</code>, you can also use Bootstrap's
+                    <a href="http://getbootstrap.com/docs/4.0/components/modal/">modal()</a> function to show and hide your
+                    dialog manually:
+                </p>
+                <pre class="prettyprint linenums"><code>var dialog = bootbox.dialog({
     show: false,
     /* Your options... */
 });
@@ -1156,118 +1172,119 @@ dialog.on('shown.bs.modal', function(e){
 dialog.modal('show');
 
 dialog.modal('hide');</code></pre>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <section id="bb-public-functions" class="bb-section">
-        <h2 class="page-header">Public Functions</h2>
-        <p>
-            The following functions can be called on an instance of a Bootbox object.
-        </p>
-        <div id="bb-function-init" class="bb-function">
-            <h3>bootbox.init(function)</h3>
+        <section id="bb-public-functions" class="bb-section">
+            <h2 id="bb-instance-functions" class="page-header bb-anchor">Instance Functions</h2>
             <p>
-                Allows the user to supply a function to be called when the dialog gets initialized.
+                The following functions can be called on an instance of a Bootbox object.
             </p>
-            <pre class="prettyprint linenums"><code>var dialog = bootbox.dialog({
+            <div class="bb-function">
+                <h3 id="bb-function-init" class="bb-anchor">bootbox.init(function)</h3>
+                <p>
+                    Allows the user to supply a function to be called when the dialog gets initialized.
+                </p>
+                <pre class="prettyprint linenums"><code>var dialog = bootbox.dialog({
     /* Your options... */
 });
 
 dialog.init(function(){
     // Do something with the dialog...
 });</code></pre>
-            <p><code>init</code> can be called on any of the wrapper functions, as they all return a Bootbox/jQuery object.</p>
-        </div>
-        <h2 class="page-header">Global Functions</h2>
-        <p>
-            The following functions can be called statically.
-        </p>
-        <div id="bb-function-setDefaults" class="bb-function">
-            <h3>bootbox.setDefaults(object <b>options</b>)</h3>
+                <p><code>init</code> can be called on any of the wrapper functions, as they all return a Bootbox/jQuery object.</p>
+            </div>
+            <h2 id="bb-global-functions" class="page-header bb-anchor">Global Functions</h2>
             <p>
-                This method allows the user to set many of the default options shown in the dialog example. Many of these options are also
-                applied to the basic wrapper methods and can be overridden whenever the wrapper methods are invoked with
-                a single options argument:
+                The following functions can be called statically.
             </p>
-            <script src="https://gist.github.com/makeusabrew/6339916.js"></script>
-        </div>
-        <div id="bb-function-setLocale" class="bb-function">
-            <h3>bootbox.setLocale(String <b>name</b>)</h3>
-            <p>
-                Allows the user to select a locale rather than using <code>setDefaults("locale", ...)</code>.
-            </p>
-            <p>
-                The locale settings are used to translate the three standard button labels: OK, CONFIRM, CANCEL
-            </p>
-            <p>
-                Default: <code>en</code>
-            </p>
-        </div>
-        <div id="bb-function-addLocale" class="bb-function">
-            <h3>bootbox.addLocale(String <b>name</b>, object <b>values</b>)</h3>
-            <p>
-                Allows the user to add a custom translation for each of the built-in command buttons. The <code>values</code>                object should be in this format:
-            </p>
-            <pre class="prettyprint linenums"><code>{
+            <div class="bb-function">
+                <h3 id="bb-function-setDefaults" class="bb-anchor">bootbox.setDefaults(object <b>options</b>)</h3>
+                <p>
+                    This method allows the user to set many of the default options shown in the dialog example. Many of these options are also
+                    applied to the basic wrapper methods and can be overridden whenever the wrapper methods are invoked with
+                    a single options argument:
+                </p>
+                <script src="https://gist.github.com/makeusabrew/6339916.js"></script>
+            </div>
+            <div class="bb-function">
+                <h3 id="bb-function-setLocale" class="bb-anchor">bootbox.setLocale(String <b>name</b>)</h3>
+                <p>
+                    Allows the user to select a locale rather than using <code>setDefaults("locale", ...)</code>.
+                </p>
+                <p>
+                    The locale settings are used to translate the three standard button labels: OK, CONFIRM, CANCEL
+                </p>
+                <p>
+                    Default: <code>en</code>
+                </p>
+            </div>
+            <div class="bb-function">
+                <h3 id="bb-function-addLocale" class="bb-anchor">bootbox.addLocale(String <b>name</b>, object <b>values</b>)</h3>
+                <p>
+                    Allows the user to add a custom translation for each of the built-in command buttons. The <code>values</code> 
+                    object should be in this format:
+                </p>
+                <pre class="prettyprint linenums"><code>{
     OK : '',
     CANCEL : '',
     CONFIRM : ''
 }</code></pre>
-        </div>
-        <div id="bb-function-removeLocale" class="bb-function">
-            <h3>bootbox.removeLocale(String <b>name</b>)</h3>
-            <p>
-                Allows the user to remove a locale from the available locale settings.
-            </p>
-        </div>
-        <div id="bb-function-locales" class="bb-function">
-            <h3>bootbox.locales(String <b>name</b>)</h3>
-            <p>
-                Allows the user to get a locale object from the available locale settings. If <code>name</code> is empty,
-                all locales will be returned.
-            </p>
-        </div>
-        <div id="bb-function-hideAll" class="bb-function">
-            <h3>bootbox.hideAll()</h3>
-            <p>
-                Hide all currently active Bootbox dialogs. Individual dialogs can be closed as per normal Bootstrap dialogs:
-            </p>
-            <pre class="prettyprint linenums"><code>dialog.modal('hide')</code></pre>
-        </div>
-    </section>
+            </div>
+            <div class="bb-function">
+                <h3 id="bb-function-removeLocale" class="bb-anchor">bootbox.removeLocale(String <b>name</b>)</h3>
+                <p>
+                    Allows the user to remove a locale from the available locale settings.
+                </p>
+            </div>
+            <div class="bb-function">
+                <h3 id="bb-function-locales" class="bb-anchor">bootbox.locales(String <b>name</b>)</h3>
+                <p>
+                    Allows the user to get a locale object from the available locale settings. If <code>name</code> is empty,
+                    all locales will be returned.
+                </p>
+            </div>
+            <div class="bb-function">
+                <h3 id="bb-function-hideAll" class="bb-anchor">bootbox.hideAll()</h3>
+                <p>
+                    Hide all currently active Bootbox dialogs. Individual dialogs can be closed as per normal Bootstrap dialogs:
+                </p>
+                <pre class="prettyprint linenums"><code>dialog.modal('hide')</code></pre>
+            </div>
+        </section>
 
-    <section id="bb-notes" class="bb-section">
-        <h2 class="page-header">Known Limitations</h2>
-        <p>
-            Using Bootbox has some caveats, as noted below.
-        </p>
-        <dl class="bb-notes-list">
-            <dt class="text-danger" id="bb-note-nonblocking">
-                Dialog code does not block code execution
-            </dt>
-            <dd>
-                <p>
-                    <b>All</b> Bootstrap modals (and therefore Bootbox modals), unlike native alerts, confirms, or prompts,
-                    are
-                    <a href="https://getbootstrap.com/docs/4.0/components/modal/#methods">asynchronous</a>; meaning, the
-                    events which Bootstrap generates are <b>non-blocking</b> events. Because of this limitation, code that
-                    should not be evaluated until a user has dismissed your dialog must be called within the callback function
-                    of the dialog.
-                </p>
-            </dd>
-            <dt class="text-danger" id="bb-note-multiplemodals">
-                Multiple open modals are not supported
-            </dt>
-            <dd>
-                <p>
-                    This is a limitation of the Bootstrap modal plugin, as noted in the
-                    <a href="https://getbootstrap.com/docs/4.0/components/modal/#how-it-works">official Bootstrap documentation</a>.
-                    While it <em>is</em> functionally possible to trigger multiple modals, custom CSS and/or JavaScript code
-                    is required for each layer of modal to display properly.
-                </p>
-            </dd>
-        </dl>
-    </section>
+        <section id="bb-notes" class="bb-section">
+            <h2 id="known-limitations" class="page-header bb-anchor">Known Limitations</h2>
+            <p>
+                Using Bootbox has some caveats, as noted below.
+            </p>
+            <dl class="bb-notes-list">
+                <dt class="text-danger bb-anchor" id="bb-note-nonblocking">
+                    Dialog code does not block code execution
+                </dt>
+                <dd>
+                    <p>
+                        <b>All</b> Bootstrap modals (and therefore Bootbox modals), unlike native alerts, confirms, or prompts,
+                        are
+                        <a href="https://getbootstrap.com/docs/4.0/components/modal/#methods">asynchronous</a>; meaning,
+                        the events which Bootstrap generates are <b>non-blocking</b> events. Because of this limitation,
+                        code that should not be evaluated until a user has dismissed your dialog must be called within the
+                        callback function of the dialog.
+                    </p>
+                </dd>
+                <dt class="text-danger bb-anchor" id="bb-note-multiplemodals">
+                    Multiple open modals are not supported
+                </dt>
+                <dd>
+                    <p>
+                        This is a limitation of the Bootstrap modal plugin, as noted in the
+                        <a href="https://getbootstrap.com/docs/4.0/components/modal/#how-it-works">official Bootstrap documentation</a>.
+                        While it <em>is</em> functionally possible to trigger multiple modals, custom CSS and/or JavaScript
+                        code is required for each layer of modal to display properly.
+                    </p>
+                </dd>
+            </dl>
+        </section>
     </div>
 
     <footer id="footer">
@@ -1293,6 +1310,7 @@ dialog.init(function(){
     <script src="./js/bootbox.js"></script>
 
     <script src="./vendor/js/prettify.min.js"></script>
+    <script src="./vendor/js/anchor.min.js"></script>
     <script src="./js/docs.js"></script>
 </body>
 

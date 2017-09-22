@@ -133,22 +133,22 @@
             <div id="bb-alert-examples" class="collapse show">
                 <div>
                     <ul class="bb-examples-list">
-                        <li>
-                            <p class="bb-example">Basic usage</p>
+                        <li class="bb-example">
+                            <p id="bb-alert-basic" class="bb-anchor">Basic usage</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="alert-default">Run example</button>
                             </p>
                             <pre class="prettyprint linenums"><code>bootbox.alert("This is the default alert!");</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">Basic usage, with callback</p>
+                        <li class="bb-example">
+                            <p id="alert-basic-callback" class="bb-anchor">Basic usage, with callback</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="alert-callback">Run example</button>
                             </p>
                             <pre class="prettyprint linenums"><code>bootbox.alert("This is an alert with a callback!", function(){ console.log('This was logged in the callback!'); });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">Basic usage, using options object</p>
+                        <li class="bb-example">
+                            <p id="alert-basic-options" class="bb-anchor">Basic usage, using options object</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="alert-options">Run example</button>
                             </p>
@@ -159,8 +159,8 @@
     }
 })</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="alert-small-size" class="bb-anchor">
                                 <span class="pull-right">
                                     Also applies to: <b>Confirm</b>, <b>Prompt</b>, <b>Custom</b>
                                 </span>
@@ -177,8 +177,8 @@
                                 <i class="fa fa-info-circle text-danger"></i> Requires Bootstrap <b>3.1.0</b> or newer.
                             </p>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="alert-large-size" class="bb-anchor">
                                 <span class="pull-right">
                                     Also applies to: <b>Confirm</b>, <b>Prompt</b>, <b>Custom</b>
                                 </span>
@@ -195,8 +195,8 @@
                                 <i class="fa fa-info-circle text-danger"></i> Requires Bootstrap <b>3.1.0</b> or newer.
                             </p>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="alert-custom-class" class="bb-anchor">
                                 <span class="pull-right">
                                     Also applies to: <b>Confirm</b>, <b>Prompt</b>, <b>Custom</b>
                                 </span>
@@ -210,8 +210,8 @@
     className: 'rubberBand animated'
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="alert-dismiss-on-click" class="bb-anchor">
                                 <span class="pull-right">
                                     Also applies to: <b>Confirm</b>, <b>Prompt</b>, <b>Custom</b>
                                 </span>
@@ -225,8 +225,8 @@
     backdrop: true
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="alert-locale" class="bb-anchor">
                                 <span class="pull-right">
                                     Also applies to: <b>Confirm</b>, <b>Prompt</b>, <b>Custom</b>
                                 </span>
@@ -260,15 +260,15 @@
             <div id="bb-confirm-examples" class="collapse show">
                 <div>
                     <ul class="bb-examples-list">
-                        <li>
-                            <p class="bb-example">Basic usage</p>
+                        <li class="bb-example">
+                            <p id="confirm-basic" class="bb-anchor">Basic usage</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="confirm-default">Run example</button>
                             </p>
                             <pre class="prettyprint linenums"><code>bootbox.confirm("This is the default confirm!", function(result){ console.log('This was logged in the callback: ' + result); });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="confirm-alternate-text-color" class="bb-anchor">
                                 <span class="pull-right">
                                     Also applies to: <b>Alert</b>, <b>Prompt</b>, <b>Custom</b>
                                 </span>
@@ -294,8 +294,8 @@
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="confirm-buttons-with-icon-text" class="bb-anchor">
                                 <span class="pull-right">
                                     Also applies to: <b>Alert</b>, <b>Prompt</b>, <b>Custom</b>
                                 </span>
@@ -320,8 +320,8 @@
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="confirm-all-locales-demo" class="bb-anchor">
                                 <span class="pull-right">
                                     Also applies to: <b>Alert</b>, <b>Prompt</b>, <b>Custom</b>
                                 </span>
@@ -368,15 +368,15 @@ bootbox.confirm({
                         but the prompt result will <b>not</b> include any form inputs from your message.
                     </p>
                     <ul class="bb-examples-list">
-                        <li>
-                            <p class="bb-example">Basic usage</p>
+                        <li class="bb-example">
+                            <p id="prompt-basic" class="bb-anchor">Basic usage</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-default">Run example</button>
                             </p>
                             <pre class="prettyprint linenums"><code>bootbox.prompt("This is the default prompt!", function(result){ console.log(result); });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">With a custom locale</p>
+                        <li class="bb-example">
+                            <p id="prompt-with-custom-locale" class="bb-anchor">With a custom locale</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-custom-locale">Run example</button>
                             </p>
@@ -396,8 +396,8 @@ bootbox.prompt({
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">Prompt with checkbox</p>
+                        <li class="bb-example">
+                            <p id="prompt-with-checkbox" class="bb-anchor">Prompt with checkbox</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-checkbox">Run example</button>
                             </p>
@@ -423,8 +423,8 @@ bootbox.prompt({
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">Prompt with radio buttons and a <code>message</code> value</p>
+                        <li class="bb-example">
+                            <p id="prompt-with-radios-message" class="bb-anchor">Prompt with radio buttons and a <code>message</code> value</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-radio">Run example</button>
                             </p>
@@ -455,8 +455,8 @@ bootbox.prompt({
                                 will be checked if <code>value</code> is missing or does not match an <code>inputOptions</code> value.
                             </p>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="prompt-with-date" class="bb-anchor">
                                 <span class="pull-right text-danger">
                                     Requires browser support: <a href="http://caniuse.com/#feat=input-datetime">http://caniuse.com/#feat=input-datetime</a>
                                 </span>
@@ -473,8 +473,8 @@ bootbox.prompt({
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="prompt-with-email" class="bb-anchor">
                                 <span class="pull-right text-danger">
                                     Requires browser support: <a href="http://caniuse.com/#feat=email">http://caniuse.com/#feat=email</a>
                                 </span>
@@ -491,8 +491,8 @@ bootbox.prompt({
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="prompt-with-number" class="bb-anchor">
                                 <span class="pull-right text-danger">
                                     Requires browser support: <a href="http://caniuse.com/#feat=input-number">http://caniuse.com/#feat=input-number</a>
                                 </span>
@@ -509,8 +509,8 @@ bootbox.prompt({
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">Prompt with password</p>
+                        <li class="bb-example">
+                            <p id="prompt-with-password" class="bb-anchor">Prompt with password</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-password">Run example</button>
                             </p>
@@ -522,8 +522,8 @@ bootbox.prompt({
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">Prompt with select</p>
+                        <li class="bb-example">
+                            <p id="prompt-with-select" class="bb-anchor">Prompt with select</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-select">Run example</button>
                             </p>
@@ -553,8 +553,8 @@ bootbox.prompt({
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">Prompt with textarea</p>
+                        <li class="bb-example">
+                            <p id="prompt-with-textarea" class="bb-anchor">Prompt with textarea</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-textarea">Run example</button>
                             </p>
@@ -566,8 +566,8 @@ bootbox.prompt({
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="prompt-with-time" class="bb-anchor">
                                 <span class="pull-right text-danger">
                                     Requires browser support: <a href="http://caniuse.com/#feat=input-datetime">http://caniuse.com/#feat=input-datetime</a>
                                 </span>
@@ -584,8 +584,8 @@ bootbox.prompt({
     }
 });</code></pre>
                         </li>
-                        <li>
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="prompt-with-range" class="bb-anchor">
                                 <span class="pull-right text-danger">
                                     Requires browser support: <a href="http://caniuse.com/#feat=input-datetime">http://caniuse.com/#feat=input-range</a>
                                 </span>
@@ -629,8 +629,8 @@ bootbox.prompt({
                         <b>Please note:</b> Custom dialogs accept only one argument: an options object. The only <b>required</b> property of the options object is <code>message</code>.
                     </p>
                     <ul class="bb-examples-list">
-                        <li>
-                            <p class="bb-example">Custom dialog as "loading" overlay</p>
+                        <li class="bb-example">
+                            <p id="custom-dialog-as-overlay" class="bb-anchor">Custom dialog as "loading" overlay</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="custom-dialog-as-overlay">Run example</button>
                             </p>
@@ -642,8 +642,8 @@ bootbox.prompt({
 // do something in the background
 dialog.modal('hide');</code></pre>
                         </li>
-                        <li id="custom-dialog-init">
-                            <p class="bb-example">
+                        <li class="bb-example">
+                            <p id="custom-dialog-init" class="bb-anchor">
                                 <span class="pull-right">
                                     Also applies to: <b>Alert</b>, <b>Confirm</b>, <b>Prompt</b>
                                 </span>
@@ -690,6 +690,7 @@ dialog.init(function(){
     <script src="./js/bootbox.js"></script>
     <script src="./js/bootbox.locales.js"></script>
     <script src="./vendor/js/prettify.min.js"></script>
+    <script src="./vendor/js/anchor.min.js"></script>
 
     <script src="./js/example.js"></script>
     <script src="./js/demos.js"></script>
