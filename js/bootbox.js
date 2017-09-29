@@ -1,6 +1,6 @@
 /*! @preserve
  * bootbox.js
- * version: 5.0.0
+ * version: 5.0.0-beta
  * author: Nick Payne <nick@kurai.co.uk>
  * license: MIT
  * http://bootboxjs.com/
@@ -239,7 +239,8 @@
 
     if ($.fn.modal.Constructor.VERSION) {
       options.fullBootstrapVersion = $.fn.modal.Constructor.VERSION;
-      options.bootstrap = options.fullBootstrapVersion.substring(0, 1);
+      var i = options.fullBootstrapVersion.indexOf('.');
+      options.bootstrap = options.fullBootstrapVersion.substring(0, i);
     }
     else {
       // Assuming version 2.3.2, as that was the last "supported" 2.x version
@@ -269,6 +270,19 @@
         var button = $(templates.button);
         button.data('bb-handler', key);
         button.addClass(b.className);
+        
+        switch(key)
+        {
+          case 'ok':
+          case 'confirm':
+            button.addClass('bootbox-accept');
+            break;
+
+          case 'cancel':
+            button.addClass('bootbox-cancel');
+            break;
+        }
+
         button.html(b.label);
         footer.append(button);
 
@@ -285,19 +299,19 @@
     if (options.className) {
       dialog.addClass(options.className);
     }
-	  
-	if(options.size){
-	  // Requires Bootstrap 3.1.0 or higher
-	  if (options.fullBootstrapVersion.substring(0, 3) < '3.1') {
-	    console.warn('"size" requires Bootstrap 3.1.0 or higher. You appear to be using ' + options.fullBootstrapVersion + '. Please upgrade to use this option.')
-	  }
-	  
+
+    if (options.size) {
+      // Requires Bootstrap 3.1.0 or higher
+      if (options.fullBootstrapVersion.substring(0, 3) < '3.1') {
+        console.warn('"size" requires Bootstrap 3.1.0 or higher. You appear to be using ' + options.fullBootstrapVersion + '. Please upgrade to use this option.')
+      }
+
       if (options.size === 'large') {
         innerDialog.addClass('modal-lg');
       } else if (options.size === 'small') {
         innerDialog.addClass('modal-sm');
       }
-	}
+    }
 
     if (options.title) {
       body.before(templates.header);
@@ -339,7 +353,7 @@
     });
 
     dialog.one('shown.bs.modal', function () {
-      dialog.find('.btn-primary:first').focus();
+      dialog.find('.bootbox-accept:first').focus();
     });
 
     // Bootbox event listeners; used to decouple some
@@ -528,7 +542,14 @@
         value = input.find('input:checked').val();
       }
       else {
-        value = input.val();
+        if (input[0].checkValidity && !input[0].checkValidity()) {
+          //todo: figure out how to display error message without having to trigger input submission
+
+          // prevents button callback from being called
+          return false;
+        } else {
+          value = input.val();
+        }
       }
 
       return options.callback.call(this, value);
@@ -554,12 +575,65 @@
       case 'text':
       case 'textarea':
       case 'email':
+      case 'password':
+        input.val(options.value);
+        
+        if (options.placeholder) {
+          input.attr('placeholder', options.placeholder);
+        }
+    
+        if (options.pattern) {
+          input.attr('pattern', options.pattern);
+        }
+    
+        if (options.maxlength) {
+          input.attr('maxlength', options.maxlength);
+        }
+
+        if (options.required) {
+          input.prop({ required: true });
+        }
+
+        break;
+
+
       case 'date':
       case 'time':
       case 'number':
-      case 'password':
       case 'range':
         input.val(options.value);
+        
+        if (options.placeholder) {
+          input.attr('placeholder', options.placeholder);
+        }
+    
+        if (options.pattern) {
+          input.attr('pattern', options.pattern);
+        }
+
+        if (options.required) {
+          input.prop({ required: true });
+        }
+        
+        // These input types have extra attributes which affect their input validation.
+        // Warning: For most browsers, date inputs are buggy in their implementation of 'step', so 
+        // this attribute will have no effect. Therefore, we don't set the attribute for date inputs.
+        // @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#Setting_maximum_and_minimum_dates
+        if (options.inputType !== 'date') {
+          if (options.step) {
+            if (options.step === 'any' || (!isNaN(options.step) && options.step > 0)) {
+              input.attr('step', options.step);
+            }
+            else {
+              throw new Error('"step" must be a valid positive number or the value "any". See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-step for more information.');
+            }
+          }
+        }
+  
+        input = validateMinOrMaxValue(input, options.inputType, 'min', options.min, options.max, options);
+  
+        input = validateMinOrMaxValue(input, options.inputType, 'max', options.max, options.min, options);
+
         break;
 
 
@@ -575,6 +649,16 @@
           throw new Error('prompt with select requires at least one option value');
         }
 
+        // placeholder is not actually a valid attribute for select,
+        // but we'll allow it, assuming it might be used for a plugin
+        if (options.placeholder) {
+          input.attr('placeholder', options.placeholder);
+        }
+        
+        if (options.required) {
+          input.prop({ required: true });
+        }
+        
         each(inputOptions, function (_, option) {
           // assume the element to attach to is the input...
           var elem = input;
@@ -605,6 +689,7 @@
 
         // safe to set a select's value as per a normal input
         input.val(options.value);
+
         break;
 
 
@@ -690,42 +775,6 @@
         break;
     }
 
-    // @TODO provide an attributes option instead
-    // and simply map that as keys: vals
-    if (options.placeholder) {
-      input.attr('placeholder', options.placeholder);
-    }
-
-    if (options.pattern) {
-      input.attr('pattern', options.pattern);
-    }
-
-    if (options.maxlength) {
-      input.attr('maxlength', options.maxlength);
-    }
-
-    // These input types have extra attributes which affect their input validation.
-    // Ignore these options for any other type.
-    // Warning: For most browsers, date inputs are buggy in their implementation of 'step', so 
-    // this attribute will have no effect. Therefore, we don't set the attribute for date inputs.
-    // @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#Setting_maximum_and_minimum_dates
-    if ($.inArray(options.inputType, ['date', 'number', 'range', 'time']) >= 0) {
-      if (options.inputType !== 'date') {
-        if (options.step) {
-          if (options.step === 'any' || (!isNaN(options.step) && options.step > 0)) {
-            input.attr('step', options.step);
-          }
-          else {
-            throw new Error('"step" must be a valid positive number or the value "any". See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-step for more information.');
-          }
-        }
-      }
-
-      input = validateMinOrMaxValue(input, options.inputType, 'min', options.min, options.max, options);
-
-      input = validateMinOrMaxValue(input, options.inputType, 'max', options.max, options.min, options);
-    }
-
     // now place it in our form
     form.append(input);
 
@@ -733,14 +782,15 @@
       e.preventDefault();
       // Fix for SammyJS (or similar JS routing library) hijacking the form post.
       e.stopPropagation();
+
       // @TODO can we actually click *the* button object instead?
       // e.g. buttons.confirm.click() or similar
-      promptDialog.find('.btn-primary').click();
+      promptDialog.find('.bootbox-accept').click();
     });
 
     if ($.trim(options.message) !== '') {
       // Add the form to whatever content the user may have added.
-      var message = options.message;
+      var message = $('<div class="bootbox-prompt-message"></div>').html(options.message);
       form.prepend(message);
       options.message = form;
     }
@@ -748,6 +798,7 @@
       options.message = form;
     }
 
+    // Generate the dialog
     promptDialog = exports.dialog(options);
 
     // clear the existing handler focusing the submit button...

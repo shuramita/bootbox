@@ -89,18 +89,18 @@
   })();
 
   (function () {
-    bootbox.addLocale('et', {
-      OK: 'OK',
-      CANCEL: 'Katkesta',
-      CONFIRM: 'OK'
-    });
-  })();
-  
-  (function () {
     bootbox.addLocale('eu', {
       OK: 'OK',
       CANCEL: 'Ezeztatu',
       CONFIRM: 'Onartu'
+    });
+  })();
+
+  (function () {
+    bootbox.addLocale('et', {
+      OK: 'OK',
+      CANCEL: 'Katkesta',
+      CONFIRM: 'OK'
     });
   })();
 
@@ -137,18 +137,18 @@
   })();
 
   (function () {
-    bootbox.addLocale('hr', {
-      OK: 'OK',
-      CANCEL: 'Odustani',
-      CONFIRM: 'Potvrdi'
-    });
-  })();
-  
-  (function () {
     bootbox.addLocale('hu', {
       OK: 'OK',
       CANCEL: 'Mégsem',
       CONFIRM: 'Megerősít'
+    });
+  })();
+
+  (function () {
+    bootbox.addLocale('hr', {
+      OK: 'OK',
+      CANCEL: 'Odustani',
+      CONFIRM: 'Potvrdi'
     });
   })();
 
