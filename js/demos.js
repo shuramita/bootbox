@@ -156,6 +156,10 @@ $(function () {
                         break;
 
                     case 'confirm-options':
+                        bootbox.setDefaults({ 
+                            swapButtonOrder: true
+                        });
+
                         bootbox.confirm({
                             message: "This is a confirm with custom button text and color! Do you like it?",
                             buttons: {

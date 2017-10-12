@@ -140,7 +140,9 @@
     // default value (used by the prompt helper)
     value: "",
     // default input type (used by the prompt helper)
-    inputType: 'text'
+    inputType: 'text',
+    // switch button order from cancel/confirm (default) to confirm/cancel
+    swapButtonOrder: false
   };
 
 
@@ -270,7 +272,7 @@
         var button = $(templates.button);
         button.data('bb-handler', key);
         button.addClass(b.className);
-        
+
         switch(key)
         {
           case 'ok':
@@ -438,6 +440,7 @@
   // for this alert.
   exports.alert = function () {
     var options;
+
     options = mergeDialogOptions('alert', ['ok'], ['message', 'callback'], arguments);
 
     // @TODO: can this move inside exports.dialog when we're iterating over each
@@ -465,15 +468,8 @@
   // for this confirm.
   exports.confirm = function () {
     var options;
-    
-    var labels = ['cancel', 'confirm'];
 
-    // Flip the labels on Mac-like OS
-    if(navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)){
-      labels = labels.map((e, i, a)=> a[(a.length -1) -i])
-    }
-
-    options = mergeDialogOptions('confirm', labels, ['message', 'callback'], arguments);
+    options = mergeDialogOptions('confirm', ['cancel', 'confirm'], ['message', 'callback'], arguments);
 
     // confirm specific validation; they don't make sense without a callback so make
     // sure it's present
@@ -511,16 +507,9 @@
     // be a function instead...
     form = $(templates.form);
 
-    var labels = ['cancel', 'confirm'];
-    
-    // Flip the labels on Mac-like OS
-    if(navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)){
-      labels = labels.map((e, i, a)=> a[(a.length -1) -i])
-    }
-
     // prompt defaults are more complex than others in that
     // users can override more defaults
-    options = mergeDialogOptions('prompt', labels, ['title', 'callback'], arguments);
+    options = mergeDialogOptions('prompt', ['cancel', 'confirm'], ['title', 'callback'], arguments);
 
     if (!options.value) {
       options.value = defaults.value;
@@ -557,8 +546,6 @@
       }
       else {
         if (input[0].checkValidity && !input[0].checkValidity()) {
-          //todo: figure out how to display error message without having to trigger input submission
-
           // prevents button callback from being called
           return false;
         } else {
@@ -884,11 +871,20 @@
   //  This entry-level method makes heavy use of composition to take a simple
   //  range of inputs and return valid options suitable for passing to bootbox.dialog
   function mergeDialogOptions(className, labels, properties, args) {
+    var locale;
+    if(args){
+      locale = args[0].locale || defaults.locale;
+      var swapButtons = args[0].swapButtonOrder || defaults.swapButtonOrder;
+
+      if(swapButtons){
+        labels = labels.reverse();
+      }
+    }
+
     //  build up a base set of dialog properties
     var baseOptions = {
       className: 'bootbox-' + className,
-      buttons: createLabels(labels, (args && args[0].locale) || defaults.locale)
-      //buttons: createLabels(labels, hasLocale ? args[0].locale : defaults.locale)
+      buttons: createLabels(labels, locale)
     };
 
     // Ensure the buttons properties generated, *after* merging
