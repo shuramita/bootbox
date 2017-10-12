@@ -872,7 +872,7 @@
   //  range of inputs and return valid options suitable for passing to bootbox.dialog
   function mergeDialogOptions(className, labels, properties, args) {
     var locale;
-    if(args){
+    if(args && args[0]){
       locale = args[0].locale || defaults.locale;
       var swapButtons = args[0].swapButtonOrder || defaults.swapButtonOrder;
 
@@ -999,8 +999,16 @@
         button.label = key;
       }
 
-      if (!button.className) {
-        if (total <= 2 && (key === 'ok' || key === 'confirm')) {
+      if (!button.className) {     
+        var isPrimary = false;
+        if(options.swapButtonOrder){
+          isPrimary = index === 0;
+        }
+        else{
+          isPrimary = index === total-1;
+        }
+
+        if (total <= 2 && isPrimary) {
           // always add a primary to the main option in a one or two-button dialog
           button.className = 'btn-primary';
         } else {

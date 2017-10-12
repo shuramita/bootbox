@@ -147,7 +147,7 @@ $(function () {
                         break;
 
 
-                        /* Confirms */
+                    /* Confirms */
 
                     case 'confirm-default':
                         bootbox.confirm("This is the default confirm.", function (result) {
@@ -156,10 +156,6 @@ $(function () {
                         break;
 
                     case 'confirm-options':
-                        bootbox.setDefaults({ 
-                            swapButtonOrder: true
-                        });
-
                         bootbox.confirm({
                             message: "This is a confirm with custom button text and color! Do you like it?",
                             buttons: {
@@ -208,7 +204,8 @@ $(function () {
                         break;
 
 
-                        /* Prompts */
+                   /* Prompts */
+
                     case 'prompt-default':
                         bootbox.prompt("This is the default prompt!", function (result) {
                             Example.show('This was logged in the callback: ' + result);
@@ -257,30 +254,30 @@ $(function () {
                         });
                         break;
                         
-                        case 'prompt-radio':
-                            bootbox.prompt({
-                                title: "This is a prompt with a set of radio inputs!",
-                                message: '<p>Please select an option below:</p>',
-                                inputType: 'radio',
-                                inputOptions: [
-                                    {
-                                        text: 'Choice One',
-                                        value: '1',
-                                    },
-                                    {
-                                        text: 'Choice Two',
-                                        value: '2',
-                                    },
-                                    {
-                                        text: 'Choice Three',
-                                        value: '3',
-                                    }
-                                ],
-                                callback: function (result) {
-                                    Example.show('This was logged in the callback: ' + result);
+                    case 'prompt-radio':
+                        bootbox.prompt({
+                            title: "This is a prompt with a set of radio inputs!",
+                            message: '<p>Please select an option below:</p>',
+                            inputType: 'radio',
+                            inputOptions: [
+                                {
+                                    text: 'Choice One',
+                                    value: '1',
+                                },
+                                {
+                                    text: 'Choice Two',
+                                    value: '2',
+                                },
+                                {
+                                    text: 'Choice Three',
+                                    value: '3',
                                 }
-                            });
-                            break;
+                            ],
+                            callback: function (result) {
+                                Example.show('This was logged in the callback: ' + result);
+                            }
+                        });
+                        break;
 
                     case 'prompt-date':
                         bootbox.prompt({
@@ -390,7 +387,7 @@ $(function () {
                     case 'custom-dialog-as-overlay':
                         var timeout = 3000; // 3 seconds
                         var dialog = bootbox.dialog({
-                            message: '<p class="text-center mb-0">Please wait while we do something...</p>',
+                            message: '<p class="text-center">Please wait while we do something...</p>',
                             closeButton: false
                         });
 
@@ -403,13 +400,46 @@ $(function () {
                     case 'custom-dialog-init':
                         var dialog = bootbox.dialog({
                             title: 'A custom dialog with init',
-                            message: '<p class="mb-0"><i class="fa fa-spin fa-spinner"></i> Loading...</p>'
+                            message: '<p><i class="fa fa-spin fa-spinner"></i> Loading...</p>'
                         });
 
                         dialog.init(function () {
                             setTimeout(function () {
-                                dialog.find('.bootbox-body').html('<p class="mb-0">I was loaded after the dialog was shown!</p>');
+                                dialog.find('.bootbox-body').html('I was loaded after the dialog was shown!');
                             }, 3000);
+                        });
+
+                        break;
+
+                    case 'custom-dialog-with-buttons':
+                        var dialog = bootbox.dialog({
+                            title: 'A custom dialog with buttons and callbacks',
+                            message: "<p>This dialog has buttons. Each button has it's own callback function.</p>",
+                            size: 'large',
+                            buttons: {
+                                cancel: {
+                                    label: "I'm a cancel button!",
+                                    className: 'btn-danger',
+                                    callback: function(){
+                                        Example.show('Custom cancel clicked');
+                                    }
+                                },
+                                noclose: {
+                                    label: "I don't close the modal!",
+                                    className: 'btn-warning',
+                                    callback: function(){
+                                        Example.show('Custom button clicked');
+                                        return false;
+                                    }
+                                },
+                                ok: {
+                                    label: "I'm an OK button!",
+                                    className: 'btn-info',
+                                    callback: function(){
+                                        Example.show('Custom OK clicked');
+                                    }
+                                }
+                            }
                         });
 
                         break;

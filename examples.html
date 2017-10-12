@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="../vendor/css/google.prettify.min.css" />
-    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./vendor/css/google.prettify.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
 </head>
 <body class="bb-js">
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
@@ -58,7 +58,7 @@
                             <a class="dropdown-item" href="#bb-prompt-dialog">Prompt</a>
                             <a class="dropdown-item" href="#bb-custom-dialog">Custom</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./examples">View All</a>
+                            <a class="dropdown-item" href="./examples.html">View All</a>
                         </div>
                     </div>
                 </li>
@@ -115,6 +115,61 @@
                 The examples below attempt to demonstrate the myriad ways in which you can use Bootbox.js. Where functionality amongst the dialogs is nearly identical,
                 the example will indicate to which functions the example applies.
             </p>
+            <div class="collapse">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <nav class="nav flex-column">
+                            <h4 class="nav-header">Alert</h4>
+                            <a class="nav-link active" href="#">Basic</a>
+                            <h6 class="nav-header">Advanced Usage</h6>
+                            <a class="nav-link" href="#">Custom class</a>
+                            <a class="nav-link" href="#">Dismiss On Overlay Click</a>
+                            <a class="nav-link" href="#">Using Locales</a>
+                            <a class="nav-link" href="#">Sizes</a>
+                        </nav>
+                    </div>
+                    <div class="col-sm-3">
+                        <nav class="nav flex-column">
+                            <h4 class="nav-header">Confirm</h4>
+                            <a class="nav-link" href="#">Basic</a>
+                            <h6 class="nav-header">Advanced Usage</h6>
+                            <a class="nav-link" href="#">Alternate Text or Colors</a>
+                            <a class="nav-link" href="#">Buttons with Icons</a>
+                            <a class="nav-link" href="#">Using Locales</a>
+                        </nav>
+                    </div>
+                    <div class="col-sm-3">
+                        <nav class="nav flex-column">
+                            <h4 class="nav-header">Prompt</h4>
+                            <a class="nav-link" href="#">Basic</a>
+                            <h6 class="nav-header">Advanced Usage - Input Type</h6>
+                            <a class="nav-link" href="#">Using Checkboxes</a>
+                            <a class="nav-link" href="#">Using Date</a>
+                            <a class="nav-link" href="#">Using Email</a>
+                            <a class="nav-link" href="#">Using Number</a>
+                            <a class="nav-link" href="#">Using Password</a>
+                            <a class="nav-link" href="#">Using Radiobuttons</a>
+                            <a class="nav-link" href="#">Using Range</a>
+                            <a class="nav-link" href="#">Using Select</a>
+                            <a class="nav-link" href="#">Using Textarea</a>
+                            <a class="nav-link" href="#">Using Time</a>
+                            <h6 class="nav-header">Advanced Usage - Validation</h6>
+                            <a class="nav-link" href="#">Using Maxlength</a>
+                            <a class="nav-link" href="#">Using Pattern</a>
+                            <a class="nav-link" href="#">Using Required</a>
+                        </nav>
+                    </div>
+                    <div class="col-sm-3">
+                        <nav class="nav flex-column">
+                            <h4 class="nav-header">Dialog</h4>
+                            <a class="nav-link" href="#">Basic Usage</a>
+                            <a class="nav-link" href="#">Using init function</a>
+                            <a class="nav-link" href="#">Using as "loading" overlay</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <section id="bb-alert-dialog" class="bb-section">
@@ -134,7 +189,7 @@
                 <div>
                     <ul class="bb-examples-list">
                         <li class="bb-example">
-                            <p id="alert-basic" class="bb-anchor">Basic usage</p>
+                            <p id="bb-alert-basic" class="bb-anchor">Basic usage</p>
                             <p>
                                 <button type="button" class="btn btn-primary example-button" data-bb-example-key="alert-default">Run example</button>
                             </p>
@@ -663,6 +718,43 @@ dialog.init(function(){
     }, 3000);
 });</code></pre>
                         </li>
+                        <li class="bb-example">
+                            <p id="custom-dialog-with-buttons" class="bb-anchor">
+                                Custom dialog, with buttons and callbacks
+                            </p>
+                            <p>
+                                <button type="button" class="btn btn-primary example-button" data-bb-example-key="custom-dialog-with-buttons">Run example</button>
+                            </p>
+                            <pre class="prettyprint linenums"><code>var dialog = bootbox.dialog({
+    title: 'A custom dialog with buttons and callbacks',
+    message: "&lt;p&gt;This dialog has buttons. Each button has it's own callback function.&lt;/p&gt;",
+    size: 'large',
+    buttons: {
+        cancel: {
+            label: "I'm a cancel button!",
+            className: 'btn-danger',
+            callback: function(){
+                Example.show('Custom cancel clicked');
+            }
+        },
+        noclose: {
+            label: "I don't close the modal!",
+            className: 'btn-warning',
+            callback: function(){
+                Example.show('Custom button clicked');
+                return false;
+            }
+        },
+        ok: {
+            label: "I'm an OK button!",
+            className: 'btn-info',
+            callback: function(){
+                Example.show('Custom OK clicked');
+            }
+        }
+    }
+});</code></pre>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -671,20 +763,12 @@ dialog.init(function(){
 
     <footer id="footer">
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p class="mb-md-0 mb-sm-5">
-                        Copyright &copy; 2011-2017 <a href="http://twitter.com/makeusabrew">Nick Payne</a>.
-                    </p>
-                </div>
-                <div class="text-sm-right col-xs-12 col-sm-12 col-md-4">
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bootboxjs.com" data-via="makeusabrew" data-related="makeusabrew" data-size="large">Tweet</a>
-                    <a href="https://twitter.com/makeusabrew" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @makeusabrew</a>
-                    <script>
-                        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");
-                    </script>
-                </div>              
+            <div class="pull-right">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bootboxjs.com" data-via="makeusabrew" data-related="makeusabrew" data-size="large">Tweet</a>
+                <a href="https://twitter.com/makeusabrew" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @makeusabrew</a>
+                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
             </div>
+            &copy; 2011-2017 <a href="http://twitter.com/makeusabrew">Nick Payne</a>.
         </div>
     </footer>
 
@@ -695,12 +779,12 @@ dialog.init(function(){
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <script src="../js/bootbox.js"></script>
-    <script src="../js/bootbox.locales.js"></script>
-    <script src="../vendor/js/prettify.min.js"></script>
-    <script src="../vendor/js/anchor.min.js"></script>
+    <script src="./js/bootbox.js"></script>
+    <script src="./js/bootbox.locales.js"></script>
+    <script src="./vendor/js/prettify.min.js"></script>
+    <script src="./vendor/js/anchor.min.js"></script>
 
-    <script src="../js/example.js"></script>
-    <script src="../js/demos.js"></script>
+    <script src="./js/example.js"></script>
+    <script src="./js/demos.js"></script>
 </body>
 </html>
