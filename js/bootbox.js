@@ -465,8 +465,15 @@
   // for this confirm.
   exports.confirm = function () {
     var options;
+    
+    var labels = ['cancel', 'confirm'];
 
-    options = mergeDialogOptions('confirm', ['cancel', 'confirm'], ['message', 'callback'], arguments);
+    // Flip the labels on Mac-like OS
+    if(navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)){
+      labels = labels.map((e, i, a)=> a[(a.length -1) -i])
+    }
+
+    options = mergeDialogOptions('confirm', labels, ['message', 'callback'], arguments);
 
     // confirm specific validation; they don't make sense without a callback so make
     // sure it's present
@@ -504,9 +511,16 @@
     // be a function instead...
     form = $(templates.form);
 
+    var labels = ['cancel', 'confirm'];
+    
+    // Flip the labels on Mac-like OS
+    if(navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)){
+      labels = labels.map((e, i, a)=> a[(a.length -1) -i])
+    }
+
     // prompt defaults are more complex than others in that
     // users can override more defaults
-    options = mergeDialogOptions('prompt', ['cancel', 'confirm'], ['title', 'callback'], arguments);
+    options = mergeDialogOptions('prompt', labels, ['title', 'callback'], arguments);
 
     if (!options.value) {
       options.value = defaults.value;
@@ -870,19 +884,11 @@
   //  This entry-level method makes heavy use of composition to take a simple
   //  range of inputs and return valid options suitable for passing to bootbox.dialog
   function mergeDialogOptions(className, labels, properties, args) {
-    var hasLocale = false;
-    if (args) {
-      if (args.length > 0) {
-        if (args[0] !== undefined) {
-          hasLocale = args[0].locale !== undefined;
-        }
-      }
-    }
-
     //  build up a base set of dialog properties
     var baseOptions = {
       className: 'bootbox-' + className,
-      buttons: createLabels(labels, hasLocale ? args[0].locale : defaults.locale)
+      buttons: createLabels(labels, (args && args[0].locale) || defaults.locale)
+      //buttons: createLabels(labels, hasLocale ? args[0].locale : defaults.locale)
     };
 
     // Ensure the buttons properties generated, *after* merging
@@ -979,8 +985,6 @@
     total = getKeyLength(buttons);
 
     each(buttons, function (key, button, index) {
-      var isLast = index === total - 1;
-
       if ($.isFunction(button)) {
         // short form, assume value is our callback. Since button
         // isn't an object it isn't a reference either so re-assign it
@@ -1000,7 +1004,7 @@
       }
 
       if (!button.className) {
-        if (total <= 2 && isLast) {
+        if (total <= 2 && (key === 'ok' || key === 'confirm')) {
           // always add a primary to the main option in a one or two-button dialog
           button.className = 'btn-primary';
         } else {

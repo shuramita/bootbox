@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Examples | Bootbox.js &mdash; alert, confirm and flexible dialogs for the Bootstrap framework</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/css/google.prettify.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+<body class="bb-js">
+    <div class=" sticky-top bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand" href="./">bootbox<span class="text-danger">.js</span> <span class="d-none d-lg-inline-block">&mdash; alert, confirm and flexible dialogs for the Bootstrap framework</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="navbar-nav ml-auto mr-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./getting-started.html">Getting Started</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="btn-group">
+                            <a href="./documentation.html" class="btn btn-link nav-link nav-link-split">Docs</a>
+                            <a href="#" class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="./documentation.html#bb-alert-dialog">Alert</a>
+                                <a class="dropdown-item" href="./documentation.html#bb-confirm-dialog">Confirm</a>
+                                <a class="dropdown-item" href="./documentation.html#bb-prompt-dialog">Prompt</a>
+                                <a class="dropdown-item" href="./documentation.html#bb-custom-dialog">Custom</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="./documentation.html#bb-options">Options</a>
+                                <a class="dropdown-item" href="./documentation.html#bb-available-locales">Locales</a>
+                                <a class="dropdown-item" href="./documentation.html#bb-public-functions">Public Functions</a>
+                                <a class="dropdown-item" href="./documentation.html#bb-notes">Notes</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="./documentation.html">View All</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="btn-group">
+                            <a href="./examples.html" class="btn btn-link nav-link active nav-link-split">Examples</a>
+                            <a href="#" class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#bb-alert-dialog">Alert</a>
+                                <a class="dropdown-item" href="#bb-confirm-dialog">Confirm</a>
+                                <a class="dropdown-item" href="#bb-prompt-dialog">Prompt</a>
+                                <a class="dropdown-item" href="#bb-custom-dialog">Custom</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="./examples">View All</a>
+                            </div>
+                        </div> 
+                    </li>
+                    <li class="nav-item ml-md-3">
+                        <a class="nav-link" href="https://github.com/tiesont/bootbox">
+                            <i class="fa fa-github"></i>
+                            Github
+                        </a>
+                    </li>
+                </ul>
+                <div class="form-inline d-none d-lg-flex">
+                    <a class="btn btn-danger my-2 my-sm-0" href="#" id="download-bootbox">
+                        <i class="fa fa-download"></i>
+                        Download
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="bb-header">
+        <div id="content" class="jumbotron jumbotron-fluid mb-0" tabindex="-1">
+            <div class="container">
+                <div class="bb-masthead">
+                    <h2 class="marque">Examples</h2>
+                    <p class="lead">
+                        Currently viewing examples for version 5.x. 
+                    </p>
+                    <hr />
+                    <div class="bb-meta">
+                        <ul class="bb-meta-list float-md-right">
+                            <li class="ml-auto"><span>Version 5.0.0-beta</span></li>
+                            <li>
+                                <a href="https://github.com/tiesont/bootbox">
+                                    <i class="fa fa-github"></i>
+                                    Github
+                                </a>
+                            </li>
+                            <li class="d-none d-lg-inline-block">
+                                <a href="./v4.x/">4.x docs</a> &middot;
+                                <a href="./v3.x/">3.x docs</a> &middot;
+                                <a href="./v2.x/">2.x docs</a>
+                            </li>
+                        </ul>
+                        <p>Compatible with Bootstrap <b>3</b> and <b>4</b> (Beta)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="examples-nav" class="collapse bg-dark">
+        <div class="container text-light py-3">
+            <p class="lead">
+                The examples below attempt to demonstrate the myriad ways in which you can use Bootbox.js. Where functionality amongst the dialogs is nearly identical,
+                the example will indicate to which functions the example applies.
+            </p>
+            <div class="row">
+                <div class="col-sm-3">
+                    <nav class="nav flex-column">
+                        <h4 class="nav-header">Alert</h4>
+                        <a class="nav-link active" href="#">Basic</a>
+                        <h6 class="nav-header">Advanced Usage</h6>
+                        <a class="nav-link" href="#">Custom class</a>
+                        <a class="nav-link" href="#">Dismiss On Overlay Click</a>
+                        <a class="nav-link" href="#">Using Locales</a>
+                        <a class="nav-link" href="#">Sizes</a>
+                    </nav>
+                </div>
+                <div class="col-sm-3">
+                    <nav class="nav flex-column">
+                        <h4 class="nav-header">Confirm</h4>
+                        <a class="nav-link" href="#">Basic</a>
+                        <h6 class="nav-header">Advanced Usage</h6>
+                        <a class="nav-link" href="#">Alternate Text or Colors</a>
+                        <a class="nav-link" href="#">Buttons with Icons</a>
+                        <a class="nav-link" href="#">Using Locales</a>
+                    </nav>
+                </div>
+                <div class="col-sm-3">
+                    <nav class="nav flex-column">
+                        <h4 class="nav-header">Prompt</h4>
+                        <a class="nav-link" href="#">Basic</a>
+                        <h6 class="nav-header">Advanced Usage - Input Type</h6>
+                        <a class="nav-link" href="#">Using Checkboxes</a>
+                        <a class="nav-link" href="#">Using Date</a>
+                        <a class="nav-link" href="#">Using Email</a>
+                        <a class="nav-link" href="#">Using Number</a>
+                        <a class="nav-link" href="#">Using Password</a>
+                        <a class="nav-link" href="#">Using Radiobuttons</a>
+                        <a class="nav-link" href="#">Using Range</a>
+                        <a class="nav-link" href="#">Using Select</a>
+                        <a class="nav-link" href="#">Using Textarea</a>
+                        <a class="nav-link" href="#">Using Time</a>
+                        <h6 class="nav-header">Advanced Usage - Validation</h6>
+                        <a class="nav-link" href="#">Using Maxlength</a>
+                        <a class="nav-link" href="#">Using Pattern</a>
+                        <a class="nav-link" href="#">Using Required</a>
+                    </nav>
+                </div>
+                <div class="col-sm-3">
+                    <nav class="nav flex-column">
+                        <h4 class="nav-header">Dialog</h4>
+                        <a class="nav-link" href="#">Basic Usage</a>
+                        <a class="nav-link" href="#">Using init function</a>
+                        <a class="nav-link" href="#">Using as "loading" overlay</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-danger py-2 mb-4">
+        <div class="container">
+            <a href="#" class="text-white mr-4" data-toggle="collapse" data-target="#examples-nav">
+                <i class="fa fa-plus"></i>
+                More Examples
+            </a>
+            <a href="#" class="text-white">
+                <i class="fa fa-file-text-o"></i>
+                Documentation: Confirm
+            </a>
+        </div>
+    </div>
+
+    <div class="container docs-container">
+        <h2 class="page-header">
+            Confirm
+        </h2>
+        <p class="lead">
+            <code>bootbox.confirm</code> can be used in one of two ways, as shown below. Using an options object offers the most customization, 
+            using the <a href="#">available options</a>.
+        </p>
+        <ul class="bb-examples-list">
+            <li class="bb-example">
+                <p id="confirm-basic-callback" class="bb-anchor">Basic usage, with callback</p>
+                <p>
+                    <button type="button" class="btn btn-primary example-button" data-bb-example-key="confirm-callback">Run example</button>
+                </p>
+                <pre class="prettyprint linenums"><code>bootbox.confirm("This is a standard confirm with a callback! Does it make sense?", function(result){ 
+    console.log('This was logged in the callback!'); 
+});</code></pre>
+            </li>
+            <li class="bb-example">
+                <p id="confirm-basic-options" class="bb-anchor">
+                    Basic usage, using options object. When using an options object, the only required options are <code>message</code> and <code>callback</code>.
+                </p>
+                <p>
+                    <button type="button" class="btn btn-primary example-button" data-bb-example-key="confirm-options">Run example</button>
+                </p>
+                <pre class="prettyprint linenums"><code>bootbox.confirm({
+    message: "This is a confirm, using an options object. Does it seem straight-forward to use?",
+    callback: function (result) {
+        console.log('This was logged in the callback!');
+    }
+})</code></pre>
+                <p></p>
+            </li>
+        </ul>
+
+        <h3>Advanced Usage</h3>
+        <p class="lead">
+            The examples below demonstrate a variety of the <a href="#">available options</a>.
+        </p>
+
+        <ul class="bb-examples-list">
+            <li class="bb-example">
+                <p id="confirm-alternate-text-color" class="bb-anchor">
+                    <span class="pull-right">
+                        Also applies to: <b>Alert</b>, <b>Prompt</b>, <b>Custom</b>
+                    </span>
+                    With alternate button text and color
+                </p>
+                <p>
+                    <button type="button" class="btn btn-primary example-button" data-bb-example-key="confirm-options">Run example</button>
+                </p>
+                <pre class="prettyprint linenums"><code>bootbox.confirm({
+    message: "This is a confirm with custom button text and color! Do you like it?",
+    buttons: {
+        confirm: {
+            label: 'Yes',
+            className: 'btn-success'
+        },
+        cancel: {
+            label: 'No',
+            className: 'btn-danger'
+        }
+    },
+    callback: function (result) {
+        console.log('This was logged in the callback: ' + result);
+    }
+});</code></pre>
+            </li>
+            <li class="bb-example">
+                <p id="confirm-buttons-with-icon-text" class="bb-anchor">
+                    <span class="pull-right">
+                        Also applies to: <b>Alert</b>, <b>Prompt</b>, <b>Custom</b>
+                    </span>
+                    With icon and button text
+                </p>
+                <p>
+                    <button type="button" class="btn btn-primary example-button" data-bb-example-key="confirm-button-text">Run example</button>
+                </p>
+                <pre class="prettyprint linenums"><code>bootbox.confirm({
+    title: "Destroy planet?",
+    message: "Do you want to activate the Deathstar now? This cannot be undone.",
+    buttons: {
+        cancel: {
+            label: '&lt;i class="fa fa-times"&gt;&lt;/i&gt; Cancel'
+        },
+        confirm: {
+            label: '&lt;i class="fa fa-check"&gt;&lt;/i&gt; Confirm'
+        }
+    },
+    callback: function (result) {
+        console.log('This was logged in the callback: ' + result);
+    }
+});</code></pre>
+            </li>
+            <li class="bb-example">
+                <p id="confirm-all-locales-demo" class="bb-anchor">
+                    <span class="pull-right">
+                        Also applies to: <b>Alert</b>, <b>Prompt</b>, <b>Custom</b>
+                    </span>
+                    Demoing all locales
+                </p>
+                <div class="form-group">
+                    <label>Choose a locale: </label>
+                    <select id="locales" class="custom-select"></select>
+                </div>
+                <p>
+                    <button type="button" class="btn btn-primary example-button" data-bb-example-key="confirm-locale">Run example</button>
+                </p>
+                <pre class="prettyprint linenums"><code>var locale = $('#locales').val();
+
+bootbox.confirm({
+    message: "This confirm uses the selected locale. Were the labels what you expected?",
+    locale: locale,
+    callback: function (result) {
+        Example.show('This was logged in the callback: ' + result);
+    }
+});</code></pre>
+            </li>
+        </ul>
+    </div>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="mb-md-0 mb-sm-5">
+                        Copyright &copy; 2011-2017 <a href="http://twitter.com/makeusabrew">Nick Payne</a>.
+                    </p>
+                </div>
+                <div class="text-sm-right col-xs-12 col-sm-12 col-md-4">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bootboxjs.com" data-via="makeusabrew" data-related="makeusabrew" data-size="large">Tweet</a>
+                    <a href="https://twitter.com/makeusabrew" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @makeusabrew</a>
+                    <script>
+                        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");
+                    </script>
+                </div>              
+            </div>
+        </div>
+    </footer>
+
+    <div class="bb-alert alert alert-info" style="display:none;">
+        <span>The examples populate this alert with dummy content</span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="../js/bootbox.js"></script>
+    <script src="../js/bootbox.locales.js"></script>
+    <script src="../vendor/js/prettify.min.js"></script>
+    <script src="../vendor/js/anchor.min.js"></script>
+
+    <script src="../js/example.js"></script>
+    <script src="../js/demos.js"></script>
+</body>
+</html>
