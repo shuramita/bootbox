@@ -39,6 +39,11 @@
     color: rgba(255,255,255,0.75) !important;
 }
 
+.bb-js .bg-dark a.nav-link:hover
+{
+    color: rgba(255,255,255,0.95) !important;
+}
+
 .bb-js .bg-dark .dropdown-item:focus,
 .bb-js .bg-dark .dropdown-item:hover
 {
