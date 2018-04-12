@@ -8,6 +8,16 @@
     padding-right: 0;
 }
 
+.text-bb-alt
+{
+    color: rgb(180, 14, 77);
+}   
+
+.text-thin
+{
+    font-weight: 300;
+}
+
 .btn.btn-xl
 {
     font-size: 3rem;
@@ -21,12 +31,12 @@
 
 .bg-dark
 {
-    background-color: #2D2D2D !important;
+    background-color: rgb(180, 14, 77) !important;
 }
 
 .bb-header
 {
-    background: #2D2D2D url('../images/footer_lodyas.png') repeat repeat 0 0;
+    background: #2D2D2D url('../images/use_your_illusion.png') repeat repeat 0 0;
 }
 
 .bb-header .jumbotron
@@ -53,9 +63,8 @@
 
     .bb-masthead h1
     {
-        font-weight: 700;
-        text-shadow: 2px 2px 2px #777;
-        font-family: Menlo,Monaco,Consolas,'Courier New',monospace;
+        font-weight: 600;
+        text-shadow: 2px 2px 2px rgba(0,0,0,0.25);
     }
 
     .bb-masthead hr
@@ -102,7 +111,7 @@
 
     .bb-meta a
     {
-        color: #d9534f;
+        color: rgb(180, 14, 77);
     }
 
 
