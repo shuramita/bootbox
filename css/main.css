@@ -29,9 +29,21 @@
     padding: 0.5rem;
 }
 
-.bg-dark
+.bb-js .bg-dark
 {
     background-color: rgb(180, 14, 77) !important;
+}
+
+.bb-js .bg-dark a.nav-link
+{
+    color: rgba(255,255,255,0.75) !important;
+}
+
+.bb-js .bg-dark .dropdown-item:focus,
+.bb-js .bg-dark .dropdown-item:hover
+{
+    background-color: rgba(180, 14, 77, 0.75);
+    color: rgba(255,255,255,0.85);
 }
 
 .bb-header
