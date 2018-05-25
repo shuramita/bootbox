@@ -245,6 +245,13 @@
     border: solid 1px rgba(255, 255, 255, .5);
 }
 
+.bb-code.bb-code-well
+{
+	padding: 1em; 
+	margin: 0 0 1.5em; 
+	background: #f5f5f5;
+}
+
 #footer
 {
     margin-top: 3em;
