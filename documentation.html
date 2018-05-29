@@ -138,7 +138,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button" style="margin-top: -10px;">&times;</button>
+                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">&times;</button>
                                     <div class="bootbox-body">Your message here&hellip;</div>
                                 </div>
                                 <div class="modal-footer">
@@ -157,7 +157,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button" style="margin-top: -10px;">&times;</button>
+                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">&times;</button>
                                     <div class="bootbox-body">Your message <b>here&hellip;</b></div>
                                 </div>
                                 <div class="modal-footer">
@@ -193,7 +193,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Your Title</h5>
-                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button" style="margin-top: -10px;">&times;</button>
+                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">&times;</button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="bootbox-body">Your message here&hellip;</div>
@@ -235,7 +235,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button" style="margin-top: -10px;">&times;</button>
+                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button" >&times;</button>
                                     <div class="bootbox-body">Are you sure?</div>
                                 </div>
                                 <div class="modal-footer">
@@ -274,7 +274,7 @@
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button" style="margin-top: -10px;">&times;</button>
+                                    <button aria-hidden="true" data-dismiss="modal" class="bootbox-close-button close" type="button">&times;</button>
                                     <div class="bootbox-body">Are you sure?</div>
                                 </div>
                                 <div class="modal-footer">
@@ -438,6 +438,19 @@
                                         <code>email</code>, <code>date</code>, <code>time</code>, <code>number</code>, and <code>range</code> 
                                         all require browser support to function properly. You may want to consult <a href="http://caniuse.com">caniuse.com</a>
                                         to determine if your target browsers support the input types you are intending to use.
+                                    </p>
+                                    <h5>Date input type and browser support</h5>
+                                    <p>
+                                        At the time this is written, every major browser which supports the <code>date</code> input type will only 
+                                        accept date values in the ISO 8601 format, which (for a complete date) is <code>YYYY-MM-DD</code>, where
+                                    </p>
+                                    <pre class="mb-0">
+YYYY = four-digit year
+MM   = two-digit month (01=January, etc.)
+DD   = two-digit day of month (01 through 31)
+                                    </pre>
+                                    <p>
+                                        See <a href="https://www.w3.org/TR/NOTE-datetime">https://www.w3.org/TR/NOTE-datetime</a>
                                     </p>
                                 </td>
                             </tr>
@@ -1122,56 +1135,56 @@
                         <tr>
                             <td><code>ja</code></td>
                             <td>Japanese</td>
+                            <td><code>ko</code></td>
+                            <td>Korean</td>
+                        </tr>
+                        <tr>
                             <td><code>lt</code></td>
                             <td>Lithuanian</td>
-                        </tr>
-                        <tr>
                             <td><code>lv</code></td>
                             <td>Latvian</td>
+                        </tr>
+                        <tr>
                             <td><code>nl</code></td>
                             <td>Dutch</td>
-                        </tr>
-                        <tr>
                             <td><code>no</code></td>
                             <td>Norwegian</td>
+                        </tr>
+                        <tr>
                             <td><code>pl</code></td>
                             <td>Polish</td>
-                        </tr>
-                        <tr>
                             <td><code>pt</code></td>
                             <td>Portuguese</td>
+                        </tr>
+                        <tr>
                             <td><code>ru</code></td>
                             <td>Russian</td>
-                        </tr>
-                        <tr>
                             <td><code>sk</code></td>
                             <td>Slovak</td>
+                        </tr>
+                        <tr>
                             <td><code>sl</code></td>
                             <td>Slovenian</td>
-                        </tr>
-                        <tr>
                             <td><code>sq</code></td>
                             <td>Albanian</td>
+                        </tr>
+                        <tr>
                             <td><code>sv</code></td>
                             <td>Swedish</td>
-                        </tr>
-                        <tr>
                             <td><code>th</code></td>
                             <td>Thai</td>
+                        </tr>
+                        <tr>
                             <td><code>tr</code></td>
                             <td>Turkish</td>
-                        </tr>
-                        <tr>
                             <td><code>uk</code></td>
                             <td>Ukrainian</td>
-                            <td><code>zh_CN</code></td>
-                            <td>Chinese (People's Republic of China)</td>
                         </tr>
                         <tr>
+                            <td><code>zh_CN</code></td>
+                            <td>Chinese (People's Republic of China)</td>
                             <td><code>zh_TW</code></td>
                             <td>Chinese (Taiwan / Republic of China)</td>
-                            <td></td>
-                            <td></td>
                         </tr>
                     </tbody>
                 </table>
