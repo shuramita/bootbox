@@ -1,8 +1,8 @@
-# Bootbox - Bootstrap powered alert, confirm and flexible dialog boxes
+# Bootbox - Bootstrap powered alert, confirm, prompt, and flexible dialog boxes
 
-Please see http://paynedigital.com/bootbox for full usage instructions.
+Please see http://bootboxjs.com for full usage instructions.
 
-## Demo
+## Documentation
 
-The [gh-pages](https://github.com/makeusabrew/bootbox/tree/gh-pages) branch contains a
-very [crude demo](http://makeusabrew.github.com/bootbox/demo/) (feel free to fork and improve!).
+The [gh-pages](https://github.com/makeusabrew/bootbox/tree/gh-pages) branch contains the source 
+for the bootboxjs.com website.

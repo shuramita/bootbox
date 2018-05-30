@@ -88,7 +88,7 @@
                     <hr />
                     <div class="bb-meta">
                         <ul class="bb-meta-list float-md-right">
-                            <li class="ml-auto"><span>Version 5.0.0-beta</span></li>
+                            <li class="ml-auto"><span>Version 5.0.0</span></li>
                             <li>
                                 <a href="https://github.com/tiesont/bootbox">
                                     <i class="fa fa-github"></i>
@@ -110,9 +110,10 @@
 
     <div class="container docs-container">
         <div class="bs-callout bs-callout-danger">
-            <h4>
-                IMPORTANT:
-            </h4>
+            <h5 class="callout-heading">
+                <i class="fa fa-info-circle"></i>
+                Important:
+            </h5>
             <p>
                 There are some caveats to using Bootbox dialogs in place of native dialogs. Please see the 
                 <a href="#bb-notes">Known Limitations</a> section to learn more.
@@ -247,7 +248,7 @@
                     </figure>
                 </div>
                 <div class="bs-callout bs-callout-danger">
-                    <h5 id="confirm-callout-callback" class="bb-anchor"><i class="fa fa-exclamation-triangle text-danger"></i> Please note:</h5>
+                    <h5 id="confirm-callout-callback" class="bb-anchor callout-heading"><i class="fa fa-exclamation-triangle"></i> Please note:</h5>
                     <p>
                         <b>All</b> Bootstrap modals, unlike native alerts, confirms, or prompts, are <a href="http://getbootstrap.com/docs/4.1/components/modal/#methods"><b>non-blocking</b></a>. 
                         Keep that in mind when using the <code>confirm()</code> dialog, as it is <b>not</b> a drop-in replacement for native confirm dialogs. 
@@ -334,7 +335,7 @@
                     </figure>
                 </div>
                 <div class="bs-callout bs-callout-danger">
-                    <h5 id="prompt-callout-callback" class="bb-anchor"><i class="fa fa-exclamation-triangle text-danger"></i> Please note:</h5>
+                    <h5 id="prompt-callout-callback" class="bb-anchor callout-heading"><i class="fa fa-exclamation-triangle"></i> Please note:</h5>
                     <p>
                         <b>All</b> Bootstrap modals, unlike native alerts, confirms, or prompts, are <a href="http://getbootstrap.com/docs/4.1/components/modal/#methods"><b>non-blocking</b></a>. 
                         Keep that in mind when using the <code>prompt()</code> dialog, as it is <b>not</b> a drop-in replacement for native prompt dialogs. 
@@ -381,8 +382,8 @@
                     <b>Requires Bootstrap 3.1.0 or newer</b>.
                 </p>
                 <div class="bs-callout bs-callout-info">
-                    <h5 id="prompt-callout-title" class="bb-anchor">
-                        <i class="fa fa-info-circle text-info"></i> Please note:
+                    <h5 id="prompt-callout-title" class="bb-anchor callout-heading">
+                        <i class="fa fa-info-circle"></i> Please note:
                     </h5>
                     <p>
                         Prompt <b>requires</b> the <code>title</code> option (when using the options object). You may use the <code>message</code> 
@@ -423,16 +424,26 @@
                             </tr>
                             <tr>
                                 <td><span id="prompt-option-input-type" class="bb-anchor">inputType</span></td>
-                                <td>String</td>
+                                <td>
+                                    <p>String</p>
+                                    <h6>Valid values:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><code>text</code> (default)</li>
+                                        <li><code>password</code></li>
+                                        <li><code>textarea</code></li>
+                                        <li><code>email</code></li>
+                                        <li><code>select</code></li>
+                                        <li><code>checkbox</code></li>
+                                        <li><code>radio</code></li>
+                                        <li><code>date</code></li>
+                                        <li><code>time</code></li>
+                                        <li><code>number</code></li>
+                                        <li><code>range</code></li>
+                                    </ul>
+                                </td>
                                 <td>
                                     <p>
-                                        Changes the type of input generated for the prompt dialog. Valid values for <code>inputType</code> are:
-                                    </p>
-                                    <p>
-                                        <code>text</code> (default), <code>textarea</code>, <code>email</code>, <code>select</code>,
-                                        <code>checkbox</code>,
-                                        <code>radio</code>, <code>date</code>, <code>time</code>, <code>number</code>, <code>range</code>,
-                                        and <code>password</code>.
+                                        Changes the type of input generated for the prompt dialog.
                                     </p>
                                     <p>
                                         <code>email</code>, <code>date</code>, <code>time</code>, <code>number</code>, and <code>range</code> 
@@ -485,17 +496,17 @@ DD   = two-digit day of month (01 through 31)
                                         <code>time</code>, <code>number</code>, and <code>range</code> types.
                                     </p>
                                     <p>
-                                        For <code>range</code> and <code>number</code>, <code>min</code>/<code>max</code> must
+                                        For <code>range</code> and <code>number</code>, min/max must
                                         a numeric value.
                                     </p>
                                     <p>
-                                        For <code>time</code>, <code>min</code>/<code>max</code> must a valid partial time value,
+                                        For <code>time</code>, min/max must a valid partial time value,
                                         in the form of <code>HH:MM:SS</code>, where <code>HH</code> can be any zero-padded value
                                         between <code>00</code> and <code>23</code> and
                                         <code>MM</code> and <code>SS</code> can be any zero-padded number between <code>00</code> and <code>59</code>.
                                     </p>
                                     <p>
-                                        For <code>date</code>, <code>min</code>/<code>max</code> must a date value in the form
+                                        For <code>date</code>, min/max must a date value in the form
                                         of <code>YYYY-MM-DD</code>, where <code>YYYY</code> can be any zero-padded value greater
                                         than <code>0000</code>,
                                         <code>MM</code> can be any zero-padded number between <code>01</code> and <code>12</code>,
@@ -526,7 +537,7 @@ DD   = two-digit day of month (01 through 31)
                                     </p>
                                     <p>
                                         <b>Warning:</b> For most browsers, date inputs are buggy in their implementation of <code>step</code>,
-                                        so this attribute would likely have no effect. Therefore, we don't set the attribute
+                                        so this attribute would likely have no effect. Therefore, we don't set the step attribute
                                         for date inputs.
                                     </p>
                                     <p>
@@ -664,8 +675,8 @@ DD   = two-digit day of month (01 through 31)
             <div class="bb-subsection">
                 <h3 id="dialog-advanced" class="bb-subsection-header bb-anchor">Advanced Usage</h3>
                 <p>
-                    As noted above, the only required option for a custom dialog is <code>message</code>. Custom dialogs
-                    also do not utilize a global callback; each button you add should have it's own callback function. Here's
+                    As noted above, the only required option for a custom dialog is <code>message</code>. Also, <b>custom dialogs
+                    do not utilize a global callback;</b> each button you add should have it's own callback function. Here's
                     an example with many of the options utilized:
                 </p>
                 <div class="bb-example bb-example-modal-advanced">
@@ -1052,6 +1063,20 @@ DD   = two-digit day of month (01 through 31)
                                     <p>Default: <code>false</code></pre>
                                 </td>
                             </tr>
+                            <tr>
+                                <td><span id="bb-option-show" class="bb-anchor">centerVertical</span></td>
+                                <td>Boolean</td>
+                                <td>
+                                    <p>
+                                        If <code>true</code>, the <a href="http://getbootstrap.com/docs/4.1/components/modal/#vertically-centered">modal-dialog-centered</a> 
+                                        class will be added to the dialog wrapper.
+                                    </p>
+                                    <p>
+                                        <b>Requires Bootstrap 4.1.0 or newer</b>.
+                                    </p>
+                                    <p>Default: <code>false</code></pre>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -1190,8 +1215,8 @@ DD   = two-digit day of month (01 through 31)
                 </table>
             </div>
             <div class="bs-callout bs-callout-danger">
-                <h5 id="locales-note" class="bb-anchor">
-                    <i class="fa fa-exclamation-triangle text-danger"></i> Please note:
+                <h5 id="locales-note" class="bb-anchor callout-heading">
+                    <i class="fa fa-exclamation-triangle"></i> Please note:
                 </h5>
                 <p>
                     To use any locale other than <b>en</b>, you must:
@@ -1204,7 +1229,7 @@ DD   = two-digit day of month (01 through 31)
                         Add a reference to <code>bootbox.locales.js</code> or <code>bootbox.locales.min.js</code> after <code>bootbox.js</code>.
                     </li>
                     <li>
-                        Add a reference to the target locale file, <code>fr.js</code> for example, found in the <code>src/locales</code> directory.
+                        Add a reference to the target locale file (<code>fr.js</code> to use the French locale, for example), found in the <code>src/locales</code> directory.
                     </li>
                 </ul>
             </div>
@@ -1347,6 +1372,14 @@ dialog.init(function(){
                         <a href="https://getbootstrap.com/docs/4.0/components/modal/#how-it-works">official Bootstrap documentation</a>.
                         While it <em>is</em> functionally possible to trigger multiple modals, custom CSS and/or JavaScript
                         code is required for each layer of modal to display properly.
+                    </p>
+                </dd>
+                <dt class="text-danger bb-anchor" id="bb-note-input-values">
+                    Prompt values are not sanitized
+                </dt>
+                <dd>
+                    <p>
+                        The value(s) returned by a Bootbox prompt are not sanitized in any way.
                     </p>
                 </dd>
             </dl>

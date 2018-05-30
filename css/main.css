@@ -336,13 +336,18 @@
 .docs-container .bb-example figcaption
 {
     color: #959595;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 500;
     left: 15px;
     letter-spacing: 1px;
     position: absolute;
     text-transform: uppercase;
     top: 15px;
+}
+
+.docs-container .bb-example figcaption b
+{
+    font-weight: 700;
 }
 
 .docs-container .bb-function
@@ -409,7 +414,7 @@
 
 
 
-.docs-container .bs-callout
+.bs-callout
 {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
@@ -427,58 +432,57 @@
     padding: 20px;
 }
 
-    .docs-container .bs-callout h4,
-    .docs-container .bb-section .bs-callout h4
+    .bs-callout h4,
+    .bb-section .bs-callout.bs-callout .callout-heading
     {
         margin-bottom: 5px;
         margin-top: 0;
     }
 
-    .docs-container .bs-callout p:last-child
+    .bs-callout p:last-child
     {
         margin-bottom: 0;
     }
 
-    .docs-container .bs-callout code
+    .bs-callout code
     {
         border-radius: 3px;
     }
 
-    .docs-container .bs-callout + .bs-callout
+    .bs-callout + .bs-callout
     {
         margin-top: -5px;
     }
 
-.docs-container .bs-callout-danger
+.bs-callout.bs-callout-danger
 {
     border-left-color: #ce4844;
 }
 
-    .docs-container .bs-callout-danger h4
+    .bs-callout.bs-callout-danger .callout-heading
     {
         color: #ce4844;
     }
 
-.docs-container .bs-callout-warning
+.bs-callout.bs-callout-warning
 {
     border-left-color: #aa6708;
 }
 
-    .docs-container .bs-callout-warning h4
+    .bs-callout.bs-callout-warning .callout-heading
     {
         color: #aa6708;
     }
 
-.docs-container .bs-callout-info
+.bs-callout.bs-callout-info
 {
     border-left-color: #1b809e;
 }
 
-    .docs-container .bs-callout-info h4
+    .bs-callout.bs-callout-info .callout-heading
     {
         color: #1b809e;
     }
-
 
 
 .block-danger
